@@ -9,7 +9,7 @@ const Skill = {
     create: async (name, category) => {
         const query = `
         INSERT INTO skills (name, category)
-        VALUES (?, ?)
+        VALUES ($1, $2)
         RETURNING *`;
         const result = await db.query(query, [name, category]);
         return result.rows[0];
