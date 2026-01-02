@@ -1,0 +1,103 @@
+/* =========================
+   CONTACT PAGE
+========================= */
+.contact-page {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.contact-page h1 {
+    text-align: center;
+    font-size: 2.1rem;
+    margin-bottom: 40px;
+    color: #222;
+}
+
+/* =========================
+   FORM
+========================= */
+.contact-page form {
+    background-color: #ffffff;
+    padding: 32px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Champs */
+.contact-page form div {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.contact-page label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #444;
+}
+
+.contact-page input,
+.contact-page textarea {
+    padding: 10px 12px;
+    font-size: 0.9rem;
+    border-radius: 6px;
+    border: 1px solid #ced4da;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-page textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Focus */
+.contact-page input:focus,
+.contact-page textarea:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.15);
+}
+
+/* =========================
+   BUTTON
+========================= */
+.contact-page button {
+    margin-top: 10px;
+    align-self: flex-end;
+    background-color: #0d6efd;
+    color: #ffffff;
+    border: none;
+    padding: 10px 22px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.contact-page button:hover {
+    background-color: #0b5ed7;
+    transform: translateY(-2px);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 480px) {
+    .contact-page {
+        padding: 40px 16px;
+    }
+
+    .contact-page form {
+        padding: 24px;
+    }
+
+    .contact-page button {
+        width: 100%;
+        align-self: stretch;
+    }
+}

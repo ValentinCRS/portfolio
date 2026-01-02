@@ -1,22 +1,41 @@
+// Load environment variables from the .env file
+require('dotenv').config();
+
 const express = require('express');
 const cors = require('cors');
+const mongoose = require('mongoose');
 
 const app = express();
+
+// Enable CORS to allow requests from other origins
 app.use(cors());
 
-app.get('/', (req, res) => {
-    res.send('<h1>Mon Portfolio est en ligne !</h1>');
-});
+// Enable JSON body parsing for incoming requests
+app.use(express.json());
 
-app.get('/api/projets', (req, res) => {
-    const mesProjets = [
-        { id: 1, titre: "Mon Portfolio", techno: "Vite & Node" },
-        { id: 2, titre: "Application Météo", techno: "JavaScript" }
-    ];
-    res.json(mesProjets);
-});
+// MongoDB connection URI (from environment variables or local fallback)
+const dbURI = process.env.MONGO_URI || "mongodb://127.0.0.1:27017/portfolio";
 
-const PORT = 3000;
+// Connect to MongoDB
+mongoose.connect(dbURI)
+    .then(() => console.log("MongoDB connected successfully!"))
+    .catch(err => console.error("❌ MongoDB connection error:", err));
+
+// Import application routes
+const projectRoutes = require('./routes/projectRoute');
+const authRoutes = require('./routes/authRoute');
+
+// Register API routes
+app.use('/api/projects', projectRoutes);
+app.use('/api/auth', authRoutes);
+
+// Test route to verify that the server is running
+app.get('/test', (req, res) => res.send("The server is responding!"));
+
+// Server port
+const PORT = 5000;
+
+// Start the server
 app.listen(PORT, () => {
-    console.log(`Serveur lancé sur http://localhost:${PORT}`);
+    console.log(`Server started at http://localhost:${PORT}`);
 });

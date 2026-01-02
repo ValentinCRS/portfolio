@@ -1,0 +1,82 @@
+/* =========================
+   LOGIN PAGE
+========================= */
+.loginpage {
+    max-width: 400px;
+    margin: 80px auto;
+    padding: 40px 20px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* TITRE */
+.loginpage h2 {
+    font-size: 1.9rem;
+    margin-bottom: 24px;
+    color: #222;
+}
+
+/* ERREURS */
+.loginpage .error {
+    color: #dc3545;
+    font-size: 0.85rem;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+/* FORM */
+.loginpage form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* INPUTS */
+.loginpage input {
+    padding: 10px 14px;
+    font-size: 0.95rem;
+    border-radius: 6px;
+    border: 1px solid #ced4da;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.loginpage input:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.15);
+}
+
+/* BOUTON */
+.loginpage button {
+    padding: 10px 0;
+    background-color: #0d6efd;
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.loginpage button:hover {
+    background-color: #0b5ed7;
+    transform: translateY(-2px);
+}
+
+/* RESPONSIVE */
+@media (max-width: 480px) {
+    .loginpage {
+        margin: 40px 16px;
+        padding: 32px 16px;
+    }
+
+    .loginpage h2 {
+        font-size: 1.6rem;
+    }
+}
