@@ -23,14 +23,17 @@ mongoose.connect(dbURI)
 
 // Import application routes
 const projectRoutes = require('./routes/projectRoute');
+const messageRoutes = require('./routes/messageRoute');
 const authRoutes = require('./routes/authRoute');
+const skillsRoutes = require('./routes/skillsRoute');
+const presentationRoutes = require('./routes/presentationRoute');
 
 // Register API routes
 app.use('/api/projects', projectRoutes);
+app.use('/api/messages', messageRoutes);
+app.use('/api/skills', skillsRoutes);
 app.use('/api/auth', authRoutes);
-
-// Test route to verify that the server is running
-app.get('/test', (req, res) => res.send("The server is responding!"));
+app.use('/api/presentation', presentationRoutes);
 
 // Server port
 const PORT = 5000;
