@@ -1,0 +1,79 @@
+.contact-page {
+  width: 100%;
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2.5rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  border-top: 4px solid var(--psg-red);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(5px);
+}
+
+.contact-page h1 {
+  text-align: center;
+  color: var(--psg-white);
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.contact-page form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-page label {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--psg-white);
+}
+
+.contact-page input,
+.contact-page textarea {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  color: var(--psg-white);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.contact-page textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.contact-page input:focus,
+.contact-page textarea:focus {
+  border-color: var(--psg-red);
+  background-color: rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 0 3px rgba(218, 41, 28, 0.1);
+}
+
+.contact-page input::placeholder,
+.contact-page textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+@media screen and (max-width: 768px) {
+  .contact-page {
+    padding: 1.5rem;
+    margin: 1rem auto;
+    width: 100%;
+    border-radius: 0;
+    border-top: none;
+    border-left: 4px solid var(--psg-red);
+  }
+
+  .contact-page h1 {
+    font-size: 1.5rem;
+  }
+}

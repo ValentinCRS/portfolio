@@ -3,7 +3,6 @@ import './index.css';
 const ProjectCard = ({ project}) => {
     return (
         <div className="project-card">
-        <img src={project.image_url || 'https://via.placeholder.com/300'} alt={project.title} />
         <h3>{project.title}</h3>
         <p>{project.description}</p>
         <div className="tech-tags">
@@ -14,7 +13,7 @@ const ProjectCard = ({ project}) => {
             ))}
         </div>
         <div className="links">
-            {project.link_live && <a href={project.link_live} target="_blank" rel="noreferrer">Demo</a>}
+            <a href={project.link} target="_blank" rel="noreferrer">Lien vers le github</a>
         </div>
         </div>
     );

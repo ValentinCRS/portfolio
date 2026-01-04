@@ -6,7 +6,6 @@
     min-height: 100vh;
 }
 
-/* Titre */
 .message-page h2 {
     font-size: 1.6rem;
     font-weight: 700;
@@ -14,7 +13,6 @@
     color: #111827;
 }
 
-/* Grille des messages */
 .messages-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -22,7 +20,6 @@
     margin-bottom: 24px;
 }
 
-/* Message vide */
 .message-page p {
     font-size: 0.95rem;
     color: #6b7280;

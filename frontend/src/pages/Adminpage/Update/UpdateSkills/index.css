@@ -1,0 +1,114 @@
+.update-skill {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 2.5rem;
+  border-radius: 8px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  border-top: 4px solid var(--psg-red);
+  backdrop-filter: blur(5px);
+}
+
+.update-skill h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--psg-white);
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.update-skill form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.update-skill label {
+  color: var(--psg-white);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.update-skill input,
+.update-skill select,
+.update-skill textarea {
+  width: 100%;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  color: var(--psg-white);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.update-skill input:focus,
+.update-skill select:focus,
+.update-skill textarea:focus {
+  border-color: var(--psg-red);
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.update-skill button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.update-skill button[type="submit"] {
+  background-color: var(--psg-blue);
+  color: var(--psg-white);
+  border: 1px solid var(--psg-blue);
+}
+
+.update-skill button[type="submit"]:hover {
+  background-color: var(--psg-dark);
+  border-color: var(--psg-white);
+}
+
+.update-skill button[type="button"] {
+  background-color: transparent;
+  color: var(--psg-white);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.update-skill button[type="button"]:hover {
+  background-color: var(--psg-red);
+  border-color: var(--psg-red);
+  color: var(--psg-white);
+}
+
+.update-skill .mt-4 {
+  margin-top: 1rem;
+  text-align: center;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.6);
+  transition: color 0.3s ease;
+}
+
+.update-skill .mt-4:hover {
+  text-decoration: none;
+  color: var(--psg-red);
+}
+
+@media screen and (max-width: 768px) {
+  .update-skill {
+    padding: 1.5rem;
+    width: 100%;
+    border-radius: 0;
+    border-top: none;
+    border-left: 4px solid var(--psg-red);
+  }
+
+  .update-skill h1 {
+    font-size: 1.5rem;
+  }
+}
