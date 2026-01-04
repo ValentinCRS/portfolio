@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const messageController = require('../controllers/messageController');
-const auth = require('../middleware/authMiddleware');
+const auth = require('../middlewares/authMiddleware');
 
 // Route to create a new message
 router.post('/', messageController.createMessage);
@@ -11,4 +11,5 @@ router.get('/', auth, messageController.getAllMessages);
 router.get('/:id', auth, messageController.getMessageById);
 // Route to delete a message by ID
 router.delete('/:id', auth, messageController.deleteMessageById);
+
 module.exports = router;

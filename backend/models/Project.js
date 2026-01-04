@@ -7,7 +7,7 @@ const projectSchema = new mongoose.Schema({
     description: { type: String, required: true },
     image_url: { type: String },
     link: { type: String },
-    skills: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Skills' }]
+    skills: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Skill' }]
 });
 
 

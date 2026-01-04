@@ -39,12 +39,10 @@ exports.CreateSkill = async (req, res) => {
 exports.UpdateSkill = async (req, res) => {
     try {
         const { name, category } = req.body;
-        const skill = await Skill.findById(req.params.id);
+        const skill = await Skill.findByIdAndUpdate(req.params.id, { name, category }, { new: true });
         if (!skill) {
             return res.status(404).json({ message: 'Skill not found' });
         }
-        skill.name = name;
-        skill.category = category;
         await skill.save();
         res.json(skill);
     } catch (error) {
@@ -55,12 +53,12 @@ exports.UpdateSkill = async (req, res) => {
 // Delete a skill
 exports.DeleteSkill = async (req, res) => {
     try {
-        const skill = await Skill.findById(req.params.id);
+        const { id } = req.params;
+        const skill = await Skill.findByIdAndDelete(id);
         if (!skill) {
             return res.status(404).json({ message: 'Skill pas trouver' });
         }
-        await skill.remove();
-        res.json({ message: 'Skill supprimé' });
+        res.status(200).json({ message: "Compétence supprimée avec succès !" });
     } catch (error) {
         res.status(500).json({ message: 'Server Error' });
     }

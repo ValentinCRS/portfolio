@@ -1,6 +1,8 @@
+import { useNavigate } from 'react-router-dom';
 import './index.css';
 
-const ProjectCard = ({ project}) => {
+const ProjectCard = ({ project, onDelete }) => {
+    const navigate = useNavigate();
     return (
         <div className="project-card">
         <img src={project.image_url || 'https://via.placeholder.com/300'} alt={project.title} />
@@ -13,6 +15,10 @@ const ProjectCard = ({ project}) => {
                     </span>
             ))}
         </div>
+        <button className="message-delete" onClick={onDelete}>
+                Supprimer
+            </button>
+            <button onClick={() => navigate("/admin/update-project/" + project._id)}>Editer le projet</button>
         <div className="links">
             {project.link_live && <a href={project.link_live} target="_blank" rel="noreferrer">Demo</a>}
         </div>

@@ -1,8 +1,7 @@
 // Import Mongoose to define the Message schema and model
-const db = require('../db');
-
+const mongoose = require('mongoose');
 // Define the Message schema
-const messageSchema = new db.Schema({
+const messageSchema = new mongoose.Schema({
     name: { type: String, required: true },
     email: { type: String, required: true },
     subject: { type: String, required: true },
@@ -10,4 +9,4 @@ const messageSchema = new db.Schema({
 }, { timestamps: true });
 
 // Export the Message model
-module.exports = db.model('Message', messageSchema);
+module.exports = mongoose.model('Message', messageSchema);
