@@ -43,9 +43,10 @@ const Homepage = () => {
                         <h3>{presentation.name}</h3>
                         <p>{presentation.description}</p>
                         <p>Contactez-moi à : {presentation.email}</p>
+                        <a href="../../assets/Mon_CV.pdf" download="Mon_CV.pdf">Télécharger mon CV</a>
                         <p><a href={presentation.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
                         <p><a href={presentation.github} target="_blank" rel="noopener noreferrer">GitHub</a></p>
-                        <p><a href={presentation.cv_url} target="_blank" rel="noopener noreferrer">Mon CV</a></p>
+                        
                         <h3>Compétences :</h3>
                         <ul>
                             {skills.map(skill => (
