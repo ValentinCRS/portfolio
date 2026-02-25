@@ -16,7 +16,7 @@ import './App.css';
   
 function App() {
   return (
-    <div div className="app-layout">
+    <div className="app-layout">
       <Header />
 
       <main>

@@ -1,60 +1,147 @@
-.homepage-content h1 {
+.cyber-homepage {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  width: 100%;
+}
+
+.cyber-loading {
+  color: #00f2ff;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  animation: pulse 1.5s infinite;
+}
+
+.cyber-error {
+  color: #ff003c;
+  font-family: 'Fira Code', 'Courier New', monospace;
+}
+
+.cyber-presentation-panel {
+  background-color: #121214;
+  border: 1px solid #2a2a35;
+  border-left: 3px solid #00f2ff;
+  padding: 2.5rem;
+  position: relative;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+.cyber-name {
+  color: #e2e8f0;
   font-size: 2.5rem;
-  color: var(--psg-white);
-  text-align: center;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1rem;
   text-transform: uppercase;
-  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.cyber-name .sys-prompt {
+  color: #00f2ff;
+  font-size: 1.5rem;
+  vertical-align: middle;
+}
+
+.cyber-desc {
+  color: #64748b;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.cyber-contact {
+  color: #64748b;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  margin-bottom: 2rem;
+  font-size: 0.9rem;
+}
+
+.cyber-contact .highlight {
+  color: #00f2ff;
+}
+
+.cyber-action-links {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.cyber-btn {
+  background-color: transparent;
+  border: 1px solid #00f2ff;
+  color: #00f2ff;
+  text-decoration: none;
+  padding: 0.6rem 1.2rem;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 0.9rem;
+  text-transform: uppercase;
   letter-spacing: 1px;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
-.presentation {
-  background-color: rgba(255, 255, 255, 0.05);
-  padding: 2rem;
-  border-radius: 8px;
-  margin-bottom: 3rem;
-  border-left: 4px solid var(--psg-red);
-  backdrop-filter: blur(5px);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+.cyber-btn:hover {
+  background-color: #00f2ff;
+  color: #050505;
+  box-shadow: 0 0 15px rgba(0, 242, 255, 0.6);
 }
 
-.skills-list {
+.cyber-skills-title {
+  color: #e2e8f0;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+}
+
+.cyber-skills-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-top: 1rem;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.skills-list .tag {
-  background-color: var(--psg-red);
-  color: var(--psg-white);
+.cyber-skill-tag {
+  background-color: #050505;
+  border: 1px solid #2a2a35;
+  color: #e2e8f0;
   padding: 0.4rem 0.8rem;
-  border-radius: 4px;
   font-size: 0.85rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  font-family: 'Fira Code', 'Courier New', monospace;
+  transition: all 0.3s ease;
 }
 
-.projects-grid {
+.cyber-skill-tag:hover {
+  border-color: #00f2ff;
+  color: #00f2ff;
+  box-shadow: inset 0 0 8px rgba(0, 242, 255, 0.2);
+}
+
+.cyber-skill-tag .skill-cat {
+  color: #64748b;
+  margin-right: 5px;
+}
+
+.cyber-title {
+  color: #e2e8f0;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.cyber-title .sys-prompt {
+  color: #00f2ff;
+}
+
+.cyber-projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
 }
 
-@media screen and (max-width: 768px) {
-  .homepage-content h1 {
-    font-size: 1.75rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .presentation {
-    padding: 1.25rem;
-  }
-
-  .projects-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
 }

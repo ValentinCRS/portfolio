@@ -45,26 +45,62 @@ const Contactpage = () => {
 
   return (
     <div className="contact-page">
-        <h1>Contactez-moi</h1>
+        <h1 className="cyber-contact-title">
+            <span className="sys-prompt">_&gt;</span> CONTACTEZ-MOI
+        </h1>
         <Form onSubmit={handleSubmit}>
             <FormGroup>
-                <FormLabel htmlFor="name">Nom:</FormLabel>
-                <Input type="text" id="name" name="name" value={formData.name} onChange={handleChange} placeholder="Votre nom" required={true} />
+                <FormLabel htmlFor="name" className="cyber-label">[ NOM ]</FormLabel>
+                    <Input 
+                        type="text" 
+                        id="name" 
+                        name="name" 
+                        value={formData.name} 
+                        onChange={handleChange} 
+                        placeholder="NOM" 
+                        required={true} 
+                    />
             </FormGroup>
             <FormGroup>
-                <FormLabel htmlFor="email">Email:</FormLabel>
-                <Input type="email" id="email" name="email" value={formData.email} onChange={handleChange} placeholder="Votre email" required={true} />
+                <FormLabel htmlFor="email" className="cyber-label">[ EMAIL ]</FormLabel>
+                    <Input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        value={formData.email} 
+                        onChange={handleChange} 
+                        placeholder="ADRESSE_MAIL" 
+                        required={true} 
+                    />
             </FormGroup>
             <FormGroup>
-                <FormLabel htmlFor="subject">Sujet:</FormLabel>
-                <Input type="text" id="subject" name="subject" value={formData.subject} onChange={handleChange} placeholder="Sujet du message" required={true} />
+                <FormLabel htmlFor="subject" className="cyber-label">[ SUJET ]</FormLabel>
+                    <Input 
+                        type="text" 
+                        id="subject" 
+                        name="subject" 
+                        value={formData.subject}
+                        onChange={handleChange} 
+                        placeholder="Sujet du message" 
+                        required={true}
+                    />
             </FormGroup>
             <FormGroup>
-                <FormLabel htmlFor="content">Message:</FormLabel>
-                <textarea type="textarea" id="content" name="content" value={formData.content} onChange={handleChange} placeholder="Votre message" required={true}>
-                </textarea>
+                <FormLabel htmlFor="content" className="cyber-label">[ MESSAGE ]</FormLabel>
+                    <textarea 
+                        type="textarea" 
+                        id="content" 
+                        name="content"
+                        value={formData.content} 
+                        onChange={handleChange} 
+                        placeholder="Votre message" 
+                        required={true}
+                        >
+                    </textarea>
             </FormGroup>
-            <FormSubmit content="Envoyer">Envoyer</FormSubmit>
+            <FormSubmit content="Envoyer">
+                Envoyer
+            </FormSubmit>
         </Form>
     </div>
   );

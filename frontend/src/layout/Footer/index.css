@@ -1,19 +1,55 @@
-footer {
-  width: 100%;
-  background-color: var(--psg-dark);
-  color: var(--psg-white);
+.cyber-footer {
+  background-color: #121214;
+  border-top: 1px solid #2a2a35;
+  padding: 2rem 0;
   text-align: center;
-  padding: 1.5rem 2rem;
-  border-top: 3px solid var(--psg-red);
-  font-size: 0.95rem;
-  font-weight: 600;
+  position: relative;
+  width: 100%;
   margin-top: auto;
-  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.4);
 }
 
-@media screen and (max-width: 768px) {
-  footer {
-    padding: 1rem;
-    font-size: 0.85rem;
-  }
+.cyber-footer::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px; 
+  height: 2px;
+  background-color: #00f2ff;
+  box-shadow: 0 0 10px rgba(0, 242, 255, 0.5), 0 0 20px rgba(0, 242, 255, 0.3);
+}
+
+.cyber-footer .footer-content p {
+  color: #64748b;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.cyber-footer .sys-prompt {
+  color: #00f2ff;
+  margin-right: 8px;
+  font-weight: bold;
+}
+
+.cyber-footer .highlight {
+  color: #e2e8f0;
+  font-weight: bold;
+}
+
+.cyber-footer .blinking-cursor {
+  display: inline-block;
+  width: 8px;
+  height: 15px;
+  background-color: #00f2ff;
+  margin-left: 8px;
+  vertical-align: middle;
+  animation: footerBlink 1s step-end infinite;
+}
+
+@keyframes footerBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }

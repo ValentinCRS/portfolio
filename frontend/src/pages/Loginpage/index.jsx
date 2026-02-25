@@ -32,26 +32,34 @@ const Loginpage = () => {
     };
 
     return (
-        <div className="loginpage">
-            <h2>Connexion</h2>
-            {error && <p className="error">{error}</p>}
-            <form onSubmit={handleSubmit}>
-                <input
-                    type="email"
-                    placeholder="Email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                />
-                <input
-                    type="password"
-                    placeholder="Mot de passe"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    required
-                />
-                <button type="submit">Se connecter</button>
-            </form>
+        <div className="cyber-login-container">
+            <div className="cyber-login-box">
+                <h2><span className="sys-prompt">_&gt;</span> AUTH_REQUIRED</h2>
+                
+                {error && <p className="cyber-error">[ERROR] {error}</p>}
+                
+                <form onSubmit={handleSubmit} className="cyber-form">
+                    <input
+                        type="email"
+                        placeholder="IDENTIFIANT (EMAIL)"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        required
+                        className="cyber-input"
+                    />
+                    <input
+                        type="password"
+                        placeholder="MOT_DE_PASSE"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        required
+                        className="cyber-input"
+                    />
+                    <button type="submit" className="cyber-button">
+                        INITIALISER_CONNEXION
+                    </button>
+                </form>
+            </div>
         </div>
     );
 };

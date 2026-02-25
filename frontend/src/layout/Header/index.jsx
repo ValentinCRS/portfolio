@@ -3,17 +3,27 @@ import './index.css';
 
 const Header = () => {
     return (
-        <header>
-            <nav>
+        <header className="cyber-header">
+            <div className="header-logo">
+                <p className="sys-prompt">PORTFOLIO</p>
+            </div>
+
+            <nav className="cyber-nav">
                 <ul>
                     <li>
-                        <NavLink to="/" className={({ isActive }) => isActive ? "active-link" : ""}>
-                            Accueil
+                        <NavLink 
+                            to="/" 
+                            className={({ isActive }) => isActive ? "cyber-link active-link" : "cyber-link"}
+                        >
+                            <span className="nav-bracket">[</span> ACCUEIL <span className="nav-bracket">]</span>
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink to="/contact" className={({ isActive }) => isActive ? "active-link" : ""}>
-                            Contact
+                        <NavLink 
+                            to="/contact" 
+                            className={({ isActive }) => isActive ? "cyber-link active-link" : "cyber-link"}
+                        >
+                            <span className="nav-bracket">[</span> CONTACT <span className="nav-bracket">]</span>
                         </NavLink>
                     </li>
                 </ul>

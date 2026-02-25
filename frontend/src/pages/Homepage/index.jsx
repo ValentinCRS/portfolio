@@ -33,40 +33,55 @@ const Homepage = () => {
     }, []);
 
     return (
-        <div className="homepage-content">
-            <h1>Mes Projets</h1>
-            <div className="presentation">
+        <div className="cyber-homepage">
+            
+            <div className="cyber-presentation-panel">
                 {loading ? (
-                    <p>Chargement...</p>
+                    <p className="cyber-loading">SCANNING_DATA...</p>
                 ) : presentation ? (
-                    <div>
-                        <h3>{presentation.name}</h3>
-                        <p>{presentation.description}</p>
-                        <p>Contactez-moi à : {presentation.email}</p>
-                        <a href="../../assets/Mon_CV.pdf" download="Mon_CV.pdf">Télécharger mon CV</a>
-                        <p><a href={presentation.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
-                        <p><a href={presentation.github} target="_blank" rel="noopener noreferrer">GitHub</a></p>
+                    <div className="cyber-profile-data">
+                        <h2 className="cyber-name">
+                            <span className="sys-prompt">ID:</span> {presentation.name}
+                        </h2>
                         
-                        <h3>Compétences :</h3>
-                        <ul>
+                        <p className="cyber-desc">{presentation.description}</p>
+                        
+                        <p className="cyber-contact">
+                            COM_LINK: <span className="highlight">{presentation.email}</span>
+                        </p>
+                        
+                        <div className="cyber-action-links">
+                            <a href="../../assets/Mon_CV.pdf" download="Mon_CV.pdf" className="cyber-btn">DOWNLOAD_CV</a>
+                            <a href={presentation.linkedin} target="_blank" rel="noopener noreferrer" className="cyber-btn">LINKEDIN</a>
+                            <a href={presentation.github} target="_blank" rel="noopener noreferrer" className="cyber-btn">GITHUB</a>
+                        </div>
+                        
+                        <h3 className="cyber-skills-title">SKILLS</h3>
+                        <ul className="cyber-skills-list">
                             {skills.map(skill => (
-                                <li key={skill._id}>{skill.name} - {skill.category}</li>
+                                <li key={skill._id} className="cyber-skill-tag">
+                                    <span className="skill-cat">[{skill.category}]</span> {skill.name}
+                                </li>
                             ))}
                         </ul>
                     </div>
                 ) : (
-                    <p>Aucune présentation pour le moment.</p>
+                    <p className="cyber-error">NO_PROFILE_DATA_FOUND</p>
                 )}
             </div>
-            <div className="projects-grid">
+
+            <h1 className="cyber-title"><span className="sys-prompt">_&gt;</span> MES PROJETS</h1>
+            
+            <div className="cyber-projects-grid">
                 {loading ? (
-                    <p>Chargement...</p>
+                    <p className="cyber-loading">LOADING_MODULES...</p>
                 ) : projects.length > 0 ? (
                     projects.map(proj => <ProjectCard key={proj._id} project={proj} />)
                 ) : (
-                    <p>Aucun projet pour le moment.</p>
+                    <p className="cyber-error">NO_PROJECTS_FOUND</p>
                 )}
             </div>
+            
         </div>
     );
 }
