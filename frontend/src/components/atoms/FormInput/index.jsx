@@ -1,7 +1,8 @@
-const FormInput = ({ label, type, value, onChange, name, placeholder, required }) => {
+import './index.css'
+
+const FormInput = ({ type, value, onChange, name, placeholder, required }) => {
     return (
-        <div className="form-input">
-            <label>{label}</label>
+        <div className="cyber-form-input-group">
             <input
                 type={type}
                 value={value}
@@ -9,6 +10,7 @@ const FormInput = ({ label, type, value, onChange, name, placeholder, required }
                 name={name}
                 placeholder={placeholder}
                 required={required}
+                className="cyber-input-field"
             />
         </div>
     );

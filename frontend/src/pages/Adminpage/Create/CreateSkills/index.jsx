@@ -5,6 +5,7 @@ import FormGroup from '../../../../components/molecules/FormGroup';
 import FormLabel from '../../../../components/atoms/FormLabel';
 import Input from '../../../../components/atoms/FormInput';
 import FormSubmit from '../../../../components/atoms/FormSubmit';
+import Nav from '../../../../components/AdminNav';
 import './index.css';
 
 const CreatePresentation = () => {
@@ -50,25 +51,29 @@ const CreatePresentation = () => {
     };
 
     return (
-        <div className="create-presentation">
-            <h1>Créer un Skill</h1>
+        <div className="cyber-create-skill-wrapper">
+            <div className="cyber-create-skill-container">
+                <Nav/>
+                <h1 className="cyber-page-title">
+                    <span className="sys-prompt">root@skills:</span> CREER_UN_SKILL
+                </h1>
 
-            <Form onSubmit={handleSubmit}>
-                <FormGroup className="form-group">
-                    <FormLabel htmlFor="name">Nom</FormLabel>
-                    <Input
-                        type="text"
-                        id="name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
-                    />
-                </FormGroup>
+                <Form onSubmit={handleSubmit}>
+                    <FormGroup>
+                        <FormLabel>Nom</FormLabel>
+                        <Input
+                            type="text"
+                            id="name"
+                            name="name"
+                            value={formData.name}
+                            onChange={handleChange}
+                            required
+                        />
+                    </FormGroup>
 
-                <FormGroup className="form-group">
-                    <FormLabel htmlFor="category">Catégorie</FormLabel>
-                    <Input
+                    <FormGroup>
+                        <FormLabel>Catégorie</FormLabel>
+                        <Input
                             type="text"
                             id="category"
                             name="category"
@@ -77,17 +82,20 @@ const CreatePresentation = () => {
                             onChange={handleChange}
                             required
                         />
-                </FormGroup>
+                    </FormGroup>
 
-                <FormSubmit content="Enregistrer le skill" />
-            </Form>
-
-            <button
-                className="cancel-button"
-                onClick={() => navigate("/admin")}
-            >
-                Annuler et retour
-            </button>
+                    <div className="cyber-form-actions">
+                        <FormSubmit content="INITIALISER_LE_MODULE" />
+                        <button
+                            type="button"
+                            className="cyber-cancel-btn"
+                            onClick={() => navigate("/admin")}
+                        >
+                            [X] RETOUR
+                        </button>
+                    </div>
+                </Form>
+            </div>
         </div>
     );
 }

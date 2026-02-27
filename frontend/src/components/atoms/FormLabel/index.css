@@ -1,5 +1,17 @@
-.form-label {
-  font-weight: 500;
-  color: #1f2933;
-  font-size: 0.95rem;
+.cyber-form-label {
+  display: inline-block;
+  color: #00f2ff;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 0.9rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+  text-shadow: 0 0 5px rgba(0, 242, 255, 0.2);
+}
+
+.cyber-form-label .sys-prompt {
+  color: #64748b;
+  margin-right: 8px;
+  text-shadow: none;
 }

@@ -41,13 +41,14 @@ const Homepage = () => {
                 ) : presentation ? (
                     <div className="cyber-profile-data">
                         <h2 className="cyber-name">
-                            <span className="sys-prompt">ID:</span> {presentation.name}
+                            <span className="sys-prompt">Présentation:</span><br></br>
+                            {presentation.name}
                         </h2>
                         
                         <p className="cyber-desc">{presentation.description}</p>
                         
                         <p className="cyber-contact">
-                            COM_LINK: <span className="highlight">{presentation.email}</span>
+                            ADRESSE EMAIL: <span className="highlight">{presentation.email}</span>
                         </p>
                         
                         <div className="cyber-action-links">

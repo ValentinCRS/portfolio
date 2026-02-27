@@ -1,21 +1,26 @@
-.form-submit {
+.cyber-form-submit {
   background-color: transparent;
   border: 1px solid #00f2ff;
   color: #00f2ff;
   font-family: 'Fira Code', 'Courier New', monospace;
   font-size: 1rem;
   font-weight: bold;
-  padding: 1rem;
+  padding: 1rem 2rem;
   cursor: pointer;
   text-transform: uppercase;
   letter-spacing: 2px;
   transition: all 0.3s ease;
-  margin-top: 1rem;
   width: 100%;
+  display: block;
 }
 
-.form-submit:hover {
+.cyber-form-submit:hover {
   background-color: #00f2ff;
   color: #050505;
   box-shadow: 0 0 15px rgba(0, 242, 255, 0.6);
+}
+
+.cyber-form-submit:active {
+  transform: translateY(2px);
+  box-shadow: 0 0 5px rgba(0, 242, 255, 0.4);
 }

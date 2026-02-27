@@ -12,6 +12,9 @@ import UpdatePresentation from './pages/Adminpage/Update/UpdatePresentation';
 import UpdateProject from './pages/Adminpage/Update/UpdateProject';
 import UpdateSkills from './pages/Adminpage/Update/UpdateSkills';
 import Messagepage from './pages/Adminpage/Messagepage';
+import NotFound from './pages/NotFound';
+// Décommenter pour pouvoir creer un admin
+// import Signup from './pages/Signup';
 import './App.css';
   
 function App() {
@@ -31,7 +34,10 @@ function App() {
           <Route path="/admin/update-project/:id" element={<UpdateProject />} />
           <Route path="/admin/update-skill/:id" element={<UpdateSkills />} />
           <Route path="/login" element={<Loginpage />} />
+          {/* Décommenter pour pouvoir creer un admin */}
+          {/* <Route path="/signup" element={<Signup />} /> */}
           <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<NotFound/>} />
         </Routes>
       </main>
       <Footer />

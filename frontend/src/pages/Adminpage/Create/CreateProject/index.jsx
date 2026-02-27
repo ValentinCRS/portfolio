@@ -5,6 +5,7 @@ import FormGroup from '../../../../components/molecules/FormGroup';
 import FormLabel from '../../../../components/atoms/FormLabel';
 import Input from '../../../../components/atoms/FormInput';
 import FormSubmit from '../../../../components/atoms/FormSubmit';
+import Nav from '../../../../components/AdminNav';
 import './index.css';
 
 const CreateProject = () => {
@@ -75,88 +76,89 @@ const CreateProject = () => {
     };
 
     return (
-        <div className="create-project">
-            <h1>Créer un Projet</h1>
+        <div className="cyber-create-page-wrapper">
+            <Nav />
+            <div className="cyber-create-project-container">
+                <h1 className="cyber-page-title">
+                    <span className="sys-prompt">root@project:</span> CREER_UN_PROJET
+                </h1>
 
-            <Form onSubmit={handleSubmit}>
-                <FormGroup className="form-group">
-                    <FormLabel htmlFor="name">Nom</FormLabel>
-                    <Input
-                        type="text"
-                        id="title"
-                        name="title"
-                        value={formData.title}
-                        onChange={handleChange}
-                        required
-                    />
-                </FormGroup>
+                <Form onSubmit={handleSubmit}>
+                    <FormGroup>
+                        <FormLabel>TITRE</FormLabel>
+                        <Input
+                            type="text"
+                            id="title"
+                            name="title"
+                            value={formData.title}
+                            onChange={handleChange}
+                            required
+                        />
+                    </FormGroup>
 
-                <FormGroup className="form-group">
-                    <FormLabel htmlFor="description">Description</FormLabel>
-                    <Input
-                        type="text"
-                        id="description"
-                        name="description"
-                        value={formData.description}
-                        onChange={handleChange}
-                        required
-                    />
-                </FormGroup>
+                    <FormGroup>
+                        <FormLabel>DESCRIPTION</FormLabel>
+                        <Input
+                            type="text"
+                            id="description"
+                            name="description"
+                            value={formData.description}
+                            onChange={handleChange}
+                            required
+                        />
+                    </FormGroup>
 
-                <FormGroup className="form-group">
-                    <FormLabel htmlFor="image_url">URL de l'image</FormLabel>
-                    <Input
-                        type="text"
-                        id="image_url"
-                        name="image_url"
-                        value={formData.image_url}
-                        onChange={handleChange}
-                    />
-                </FormGroup>
+                    <FormGroup>
+                        <FormLabel>IMAGE_URL</FormLabel>
+                        <Input
+                            type="text"
+                            id="image_url"
+                            name="image_url"
+                            value={formData.image_url}
+                            onChange={handleChange}
+                        />
+                    </FormGroup>
 
-                <FormGroup className="form-group">
-                    <FormLabel htmlFor="link">Lien du projet</FormLabel>
-                    <Input
-                        type="text"
-                        id="link"
-                        name="link"
-                        value={formData.link}
-                        onChange={handleChange}
-                    />
-                </FormGroup>
+                    <FormGroup>
+                        <FormLabel>LIEN_GITHUB</FormLabel>
+                        <Input
+                            type="text"
+                            id="link"
+                            name="link"
+                            value={formData.link}
+                            onChange={handleChange}
+                        />
+                    </FormGroup>
 
-                <FormGroup className="form-group">
-                    <FormLabel>Compétences utilisées</FormLabel>
+                    <FormGroup>
+                        <FormLabel>COMPÉTENCES_REQUISES</FormLabel>
+                        <div className="cyber-skills-selector">
+                            {availableSkills.length > 0 ? (
+                                availableSkills.map((skill) => (
+                                    <label key={skill._id} className={`cyber-skill-tag ${formData.skills.includes(skill._id) ? 'selected' : ''}`}>
+                                        <input
+                                            type="checkbox"
+                                            value={skill._id}
+                                            checked={formData.skills.includes(skill._id)}
+                                            onChange={handleSkillChange}
+                                            className="hidden-checkbox"
+                                        />
+                                        <span>{skill.name}</span>
+                                    </label>
+                                ))
+                            ) : (
+                                <p className="cyber-loading-text">CHARGEMENT_DES_MODULES...</p>
+                            )}
+                        </div>
+                    </FormGroup>
                     
-                    <div className="skills-container" style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', marginTop: '10px' }}>
-                        {availableSkills.length > 0 ? (
-                            availableSkills.map((skill) => (
-                                <label key={skill._id} style={{ display: 'flex', alignItems: 'center', gap: '5px', cursor: 'pointer', background: '#f0f0f0', padding: '5px 10px', borderRadius: '5px' }}>
-                                    <input
-                                        type="checkbox"
-                                        value={skill._id}
-                                        // On vérifie si l'ID est dans le tableau pour cocher la case
-                                        checked={formData.skills.includes(skill._id)}
-                                        onChange={handleSkillChange}
-                                    />
-                                    <span>{skill.name}</span> 
-                                </label>
-                            ))
-                        ) : (
-                            <p>Chargement des compétences...</p>
-                        )}
-                    </div>
-                </FormGroup>
-
-                <FormSubmit content="Enregistrer le projet" />
-            </Form>
-
-            <button
-                className="cancel-button"
-                onClick={() => navigate("/admin")}
-            >
-                Annuler et retour
-            </button>
+                    <FormSubmit content="INITIALISER_LE_PROJET" />
+                    <button type="button" className="cyber-cancel-btn" onClick={() => navigate("/admin")}>
+                        [X] RETOUR
+                    </button>
+                </Form>
+                
+            </div>
         </div>
     );
 }

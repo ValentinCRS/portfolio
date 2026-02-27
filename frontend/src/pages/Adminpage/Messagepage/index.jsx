@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import MessageCard from "../../../components/MessageCard";
+import Nav from "../../../components/AdminNav"
 import './index.css';
 
 const Messagepage = () => {
@@ -55,13 +56,15 @@ const Messagepage = () => {
     };
 
     return (
-        <div className="message-page">
-            <button onClick={() => navigate("/admin")}>
-                Retour
-            </button>
-            <h2>Page des messages</h2>
+        <div className="cyber-messages-page">
+            <div className="cyber-messages-header">
+                <Nav/>
+                <h2 className="cyber-page-title">
+                    <span className="sys-prompt">root@comms:</span> MESSAGE
+                </h2>
+            </div>
 
-            <div className="messages-grid">
+            <div className="cyber-messages-grid">
                 {messages.length > 0 ? (
                     messages.map((message) => (
                         <MessageCard
@@ -71,7 +74,9 @@ const Messagepage = () => {
                         />
                     ))
                 ) : (
-                    <p>Aucun message pour le moment.</p>
+                    <div className="cyber-empty-state">
+                        <span className="sys-prompt">&gt;</span> SYSTEME : AUCUN_MESSAGE_INTERCEPTE.
+                    </div>
                 )}
             </div>
         </div>

@@ -1,104 +1,113 @@
-.update-project {
-  width: 100%;
-  max-width: 600px;
-  margin: 0 auto;
-  background-color: rgba(255, 255, 255, 0.05);
-  padding: 2.5rem;
-  border-radius: 8px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+.cyber-update-project-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 1.75rem;
-  border-top: 4px solid var(--psg-red);
-  backdrop-filter: blur(5px);
+  align-items: center;
+  width: 100%;
+  padding: 2rem 0;
 }
 
-.update-project h1 {
+.cyber-update-project-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.cyber-page-title {
+  color: #e2e8f0;
+  font-family: 'Fira Code', 'Courier New', monospace;
   font-size: 2rem;
-  font-weight: 700;
-  color: var(--psg-white);
-  text-align: center;
-  text-transform: uppercase;
+  margin-bottom: 2rem;
+  letter-spacing: 2px;
+  text-align: left;
+  width: 100%;
+  max-width: 600px; 
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.update-project form {
+.cyber-page-title .sys-prompt {
+  color: #00f2ff;
+}
+
+.cyber-skills-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+  padding: 1rem;
+  background-color: #050505;
+  border: 1px solid #2a2a35;
+}
+
+.hidden-checkbox {
+  display: none;
+}
+
+.cyber-skill-tag {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  background-color: #121214;
+  border: 1px solid #2a2a35;
+  color: #64748b;
+  padding: 0.5rem 1rem;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+.cyber-skill-tag:hover {
+  border-color: #00f2ff;
+  color: #e2e8f0;
+}
+
+.cyber-skill-tag.selected {
+  background-color: rgba(0, 242, 255, 0.1);
+  border-color: #00f2ff;
+  color: #00f2ff;
+  box-shadow: inset 0 0 10px rgba(0, 242, 255, 0.2);
+}
+
+.cyber-loading-text {
+  color: #00f2ff;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 0.9rem;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.5; }
+  50% { opacity: 1; }
+  100% { opacity: 0.5; }
+}
+
+.cyber-form-actions {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-}
-
-.update-project label {
-  color: var(--psg-white);
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-}
-
-.update-project input,
-.update-project select,
-.update-project textarea {
+  gap: 1rem;
+  margin-top: 2rem;
   width: 100%;
+}
+
+.cyber-cancel-btn {
+  background-color: transparent;
+  border: 1px solid #ff003c;
+  color: #ff003c;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 1rem;
+  font-weight: bold;
   padding: 1rem;
-  background-color: rgba(0, 0, 0, 0.2);
-  color: var(--psg-white);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 4px;
-  font-size: 1rem;
-  outline: none;
-  transition: all 0.3s ease;
-}
-
-.update-project textarea {
-  min-height: 120px;
-  resize: vertical;
-}
-
-.update-project input:focus,
-.update-project select:focus,
-.update-project textarea:focus {
-  border-color: var(--psg-red);
-  background-color: rgba(0, 0, 0, 0.3);
-}
-
-.update-project button {
-  padding: 0.75rem 1.5rem;
-  border-radius: 4px;
-  font-weight: 700;
   cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 2px;
   transition: all 0.3s ease;
-  font-size: 1rem;
-  background-color: var(--psg-blue);
-  color: var(--psg-white);
-  border: 1px solid var(--psg-blue);
+  width: 100%;
 }
 
-.update-project button:hover {
-  background-color: var(--psg-dark);
-  border-color: var(--psg-white);
-}
-
-.update-project .mt-4 {
-  margin-top: 1rem;
-  text-align: center;
-  cursor: pointer;
-  color: rgba(255, 255, 255, 0.6);
-  transition: color 0.3s ease;
-}
-
-.update-project .mt-4:hover {
-  color: var(--psg-red);
-  text-decoration: none;
-}
-
-@media screen and (max-width: 768px) {
-  .update-project {
-    padding: 1.5rem;
-    width: 100%;
-    border-radius: 0;
-    border-top: none;
-    border-left: 4px solid var(--psg-red);
-  }
-
-  .update-project h1 {
-    font-size: 1.5rem;
-  }
+.cyber-cancel-btn:hover {
+  background-color: #ff003c;
+  color: #050505;
+  box-shadow: 0 0 15px rgba(255, 0, 60, 0.6);
 }

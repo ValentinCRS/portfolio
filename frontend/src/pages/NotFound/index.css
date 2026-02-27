@@ -1,0 +1,72 @@
+.cyber-notfound-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+  padding: 2rem;
+}
+
+.cyber-notfound-box {
+  background-color: #121214;
+  border: 1px solid #ff003c;
+  padding: 4rem 3rem;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), inset 0 0 15px rgba(255, 0, 60, 0.1);
+}
+
+.cyber-notfound-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #ff003c;
+  box-shadow: 0 0 10px rgba(255, 0, 60, 0.5), 0 0 20px rgba(255, 0, 60, 0.3);
+}
+
+.cyber-error-code {
+  color: #ff003c;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  letter-spacing: 3px;
+  text-shadow: 0 0 15px rgba(255, 0, 60, 0.6);
+}
+
+.cyber-error-code .sys-prompt {
+  color: #00f2ff;
+  font-size: 2.5rem;
+  vertical-align: middle;
+  text-shadow: none;
+}
+
+.cyber-error-msg {
+  color: #e2e8f0;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+  letter-spacing: 1px;
+}
+
+.cyber-back-btn {
+  display: inline-block;
+  background-color: transparent;
+  border: 1px solid #00f2ff;
+  color: #00f2ff;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+}
+
+.cyber-back-btn:hover {
+  background-color: #00f2ff;
+  color: #050505;
+  box-shadow: 0 0 15px rgba(0, 242, 255, 0.6);
+}

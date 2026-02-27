@@ -1,61 +1,93 @@
-.message-card {
-    background-color: #ffffff;
-    border: 1px solid #e5e7eb;
-    border-radius: 8px;
-    padding: 16px;
-    margin-bottom: 16px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+.cyber-message-card {
+  background-color: #050505;
+  border: 1px solid #2a2a35;
+  border-left: 3px solid #00f2ff;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  transition: all 0.3s ease;
 }
 
-.message-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 12px;
+.cyber-message-card:hover {
+  box-shadow: 0 5px 15px rgba(0, 242, 255, 0.1);
+  border-color: #00f2ff;
 }
 
-.message-header h3 {
-    margin: 0;
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: #111827;
+.cyber-message-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 1px dashed #2a2a35;
+  padding-bottom: 0.8rem;
+  margin-bottom: 0.8rem;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
-.message-date {
-    font-size: 0.85rem;
-    color: #6b7280;
+.cyber-sender {
+  color: #e2e8f0;
+  font-size: 1.1rem;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.message-email {
-    font-size: 0.95rem;
-    margin-bottom: 6px;
-    color: #1f2937;
+.sys-prompt {
+  color: #64748b;
+  font-size: 0.9em;
+  margin-right: 8px;
 }
 
-.message-subject {
-    font-weight: 600;
-    margin-bottom: 8px;
-    color: #374151;
+.cyber-date {
+  color: #00f2ff;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
 }
 
-.message-content {
-    font-size: 0.95rem;
-    line-height: 1.5;
-    margin-bottom: 16px;
-    color: #374151;
+.cyber-email {
+  color: #e2e8f0;
+  font-size: 0.95rem;
+  margin: 0 0 0.5rem 0;
 }
 
-.message-delete {
-    background-color: #dc2626;
-    color: #ffffff;
-    border: none;
-    padding: 8px 14px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    transition: background-color 0.2s ease;
+.cyber-subject {
+  color: #e2e8f0;
+  font-size: 0.95rem;
+  margin: 0 0 1.5rem 0;
+  font-weight: bold;
 }
 
-.message-delete:hover {
-    background-color: #b91c1c;
+.cyber-message-content {
+  background-color: #121214;
+  border: 1px solid #2a2a35;
+  padding: 1rem;
+  color: #94a3b8;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  white-space: pre-wrap;
+}
+
+.cyber-message-content p {
+  margin: 0;
+}
+
+.cyber-delete-btn {
+  background-color: transparent;
+  border: 1px solid #ff003c;
+  color: #ff003c;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 0.85rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.cyber-delete-btn:hover {
+  background-color: #ff003c;
+  color: #050505;
+  box-shadow: 0 0 10px rgba(255, 0, 60, 0.4);
 }

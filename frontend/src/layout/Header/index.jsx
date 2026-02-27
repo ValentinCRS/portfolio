@@ -5,7 +5,9 @@ const Header = () => {
     return (
         <header className="cyber-header">
             <div className="header-logo">
+                <NavLink to="/">
                 <p className="sys-prompt">PORTFOLIO</p>
+                </NavLink>
             </div>
 
             <nav className="cyber-nav">

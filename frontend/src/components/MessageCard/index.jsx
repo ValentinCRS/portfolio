@@ -9,20 +9,29 @@ const MessageCard = ({ message, onDelete }) => {
     };
 
     return (
-        <div className="message-card">
-            <div className="message-header">
-                <h3>Nom : {message.name}</h3>
-                <span className="message-date">
-                    Envoyé le : {formatDate(message.createdAt)}
+        <div className="cyber-message-card">
+            <div className="cyber-message-header">
+                <h3 className="cyber-sender">
+                    <span className="sys-prompt">NOM:</span> {message.name}
+                </h3>
+                <span className="cyber-date">
+                    [ {formatDate(message.createdAt)} ]
                 </span>
             </div>
 
-            <h4 className="message-email">Email : {message.email}</h4>
-            <p className="message-subject">Objet : {message.subject}</p>
-            <p className="message-content">{message.content}</p>
+            <h4 className="cyber-email">
+                <span className="sys-prompt">ENVOYER_PAR:</span> {message.email}
+            </h4>
+            <p className="cyber-subject">
+                <span className="sys-prompt">OBJET:</span> {message.subject}
+            </p>
+            
+            <div className="cyber-message-content">
+                <p>{message.content}</p>
+            </div>
 
-            <button className="message-delete" onClick={onDelete}>
-                Supprimer
+            <button className="cyber-delete-btn" onClick={onDelete}>
+                [X] PURGER_MESSAGE
             </button>
         </div>
     );

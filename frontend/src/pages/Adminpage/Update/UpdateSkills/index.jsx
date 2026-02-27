@@ -5,6 +5,8 @@ import FormGroup from '../../../../components/molecules/FormGroup';
 import FormLabel from '../../../../components/atoms/FormLabel';
 import Input from '../../../../components/atoms/FormInput';
 import FormSubmit from '../../../../components/atoms/FormSubmit';
+import Nav from '../../../../components/AdminNav';
+import './index.css';
 
 const UpdateSkills = () => {
     const navigate = useNavigate();
@@ -94,25 +96,29 @@ const UpdateSkills = () => {
     };
 
     return (
-        <div className="update-skill p-4">
-            <h1 className="text-2xl font-bold mb-4">Modifier la compétence</h1>
+        <div className="cyber-update-skill-wrapper">
+            <div className="cyber-update-skill-container">
+                <Nav/>
+                <h1 className="cyber-page-title">
+                    <span className="sys-prompt">root@skills:</span> EDIT_SKILL
+                </h1>
 
-            <Form onSubmit={handleSubmit}>
-                <FormGroup>
-                    <FormLabel htmlFor="name">Nom de la compétence</FormLabel>
-                    <Input
-                        type="text"
-                        id="name"
-                        name="name"
-                        placeholder="Ex: React, Node.js..."
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
-                    />
-                </FormGroup>
+                <Form onSubmit={handleSubmit}>
+                    <FormGroup>
+                        <FormLabel>Nom</FormLabel>
+                        <Input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Ex: React, Node.js..."
+                            value={formData.name}
+                            onChange={handleChange}
+                            required
+                        />
+                    </FormGroup>
 
-                <FormGroup>
-                    <FormLabel htmlFor="category">Catégorie</FormLabel>
+                    <FormGroup>
+                        <FormLabel>Catégorie</FormLabel>
                         <Input
                             type="text"
                             id="category"
@@ -124,32 +130,27 @@ const UpdateSkills = () => {
                         />
                     </FormGroup>
 
-                <FormSubmit content="Mettre à jour" />
-                <button
-                    type="button" 
-                    onClick={handleDelete}
-                    style={{
-                        marginTop: '15px',
-                        backgroundColor: '#ff4d4d',
-                        color: 'white',
-                        padding: '10px 15px',
-                        border: 'none',
-                        borderRadius: '5px',
-                        cursor: 'pointer',
-                        width: '100%',
-                        fontWeight: 'bold'
-                    }}
-                >
-                    Supprimer cette compétence
-                </button>
-            </Form>
-            
-            <button 
-                className="mt-4 text-sm text-gray-500 underline"
-                onClick={() => navigate('/admin')}
-            >
-                Annuler
-            </button>
+                    <div className="cyber-form-actions">
+                        <FormSubmit content="APPLIQUER_LES_MODIFICATIONS" />
+                        
+                        <button
+                            type="button" 
+                            className="cyber-delete-btn"
+                            onClick={handleDelete}
+                        >
+                            [!] SUPPRIMER_LE_SKILL
+                        </button>
+
+                        <button
+                            type="button"
+                            className="cyber-cancel-btn"
+                            onClick={() => navigate("/admin")}
+                        >
+                            [X] RETOUR
+                        </button>
+                    </div>
+                </Form>
+            </div>
         </div>
     );
 }

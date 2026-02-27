@@ -58,47 +58,67 @@ const Adminpage = () => {
     };
 
     return (
-        <div className="adminpage">
-            <h2>
-                Page Admin
-                <a onClick={handleLogout}>Se déconnecter</a>
-            </h2>
+        <div className="cyber-admin-page">
+            <div className="cyber-admin-header">
+                <h2>
+                    <span className="sys-prompt">root@system:</span> PAGE_ADMIN
+                </h2>
+                <button className="cyber-logout-btn" onClick={handleLogout}>
+                    [X] DECONNEXION
+                </button>
+            </div>
 
-            <Nav />
+            <div className="cyber-admin-nav-wrapper">
+                <Nav />
+            </div>
 
-            <div className="presentation-section">
+            <div className="cyber-admin-panel">
                 {presentation ? (
                     <>
-                        <h3>Présentation</h3>
-                        <p>{presentation.name}</p>
-                        <p>{presentation.description}</p>
-                        <button onClick={() => navigate("/admin/update-presentation")}>Editer la présentation</button>
+                        <h3 className="cyber-panel-title">SYS.PRESENTATION</h3>
+                        <p className="cyber-text-highlight">{presentation.name}</p>
+                        <p className="cyber-text-dim">{presentation.description}</p>
+                        <button className="cyber-action-btn" onClick={() => navigate("/admin/update-presentation")}>
+                            EDITER_PRESENTATION
+                        </button>
                     </>
                 ) : (
-                    <p>Aucune présentation pour le moment.</p>
-                )}
-            </div>
-            <div className="skills-list">
-                {skills.length > 0 ? (
-                    skills.map(skill => (
-                        <button className="skills-list-boutton" key={skill._id} onClick={() => navigate(`/admin/update-skill/${skill._id}`)}>
-                            {skill.name}
-                        </button>
-                    ))
-                ) : (
-                    <p>Aucune compétence pour le moment.</p>
+                    <p className="cyber-error">AUCUNE_PRESENTATION_TROUVEE</p>
                 )}
             </div>
 
-            <div className="projects-section">
-                <h2>Mes Projets</h2>
-                <div className="projects-grid">
-                    {projects.length > 0 ? (
-                        projects.map((proj) => (
-                            <ProjectCard key={proj._id} project={proj} onDelete={() => handleDelete(proj._id)}/>
+            <div className="cyber-admin-panel">
+                <h3 className="cyber-panel-title">SYS.COMPETENCES</h3>
+                <div className="cyber-admin-skills">
+                    {skills.length > 0 ? (
+                        skills.map(skill => (
+                            <button 
+                                className="cyber-admin-skill-btn" 
+                                key={skill._id} 
+                                onClick={() => navigate(`/admin/update-skill/${skill._id}`)}
+                            >
+                                {skill.name}
+                            </button>
                         ))
                     ) : (
-                        <p>Aucun projet pour le moment.</p>
+                        <p className="cyber-error">AUCUNE_COMPETENCE_TROUVEE</p>
+                    )}
+                </div>
+            </div>
+
+            <div className="cyber-admin-panel cyber-admin-projects">
+                <h2 className="cyber-panel-title">BASE_DE_DONNEES.PROJETS</h2>
+                <div className="cyber-admin-projects-grid">
+                    {projects.length > 0 ? (
+                        projects.map((proj) => (
+                            <ProjectCard 
+                                key={proj._id} 
+                                project={proj} 
+                                onDelete={() => handleDelete(proj._id)}
+                            />
+                        ))
+                    ) : (
+                        <p className="cyber-error">AUCUN_PROJET_TROUVE</p>
                     )}
                 </div>
             </div>

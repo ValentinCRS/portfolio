@@ -1,6 +1,12 @@
-.form-group {
+.cyber-form-group {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
   width: 100%;
+  position: relative;
+}
+
+.cyber-form-group:last-child {
+  margin-bottom: 0;
 }

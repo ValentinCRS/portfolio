@@ -1,113 +1,149 @@
-.adminpage {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 3rem 2rem;
+.cyber-admin-page {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
-  color: var(--psg-white);
+  gap: 2.5rem;
+  width: 100%;
+  padding: 2rem 0;
 }
 
-.adminpage h2 {
+.cyber-admin-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--psg-white);
-  text-transform: uppercase;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 2px solid #2a2a35;
   padding-bottom: 1rem;
-}
-
-.adminpage h2 a {
-  font-size: 1rem;
-  color: var(--psg-red);
-  cursor: pointer;
-  text-transform: none;
-  font-weight: 600;
-  transition: opacity 0.3s ease;
-}
-
-.adminpage h2 a:hover {
-  text-decoration: underline;
-  opacity: 0.8;
-}
-
-.presentation-section {
-  background-color: rgba(255, 255, 255, 0.05);
-  padding: 2.5rem;
-  border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-}
-
-.presentation-section h3 {
-  margin-bottom: 1.5rem;
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: var(--psg-white);
-}
-
-.presentation-section p {
-  margin-bottom: 1rem;
-  color: rgba(255, 255, 255, 0.9);
-}
-
-.presentation-section button {
-  margin-top: 1.5rem;
-}
-
-.skills-list {
-  display: flex;
   flex-wrap: wrap;
   gap: 1rem;
 }
 
-.skills-list-boutton {
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+.cyber-admin-header h2 {
+  color: #e2e8f0;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 2rem;
+  margin: 0;
+  letter-spacing: 2px;
+}
+
+.cyber-admin-header .sys-prompt {
+  color: #00f2ff;
+}
+
+.cyber-logout-btn {
   background-color: transparent;
-  color: var(--psg-white);
+  border: 1px solid #ff003c;
+  color: #ff003c;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 0.9rem;
+  font-weight: bold;
+  padding: 0.6rem 1.2rem;
   cursor: pointer;
-  font-weight: 600;
   transition: all 0.3s ease;
 }
 
-.skills-list-boutton:hover {
-  background-color: var(--psg-red);
-  border-color: var(--psg-red);
-  color: var(--psg-white);
+.cyber-logout-btn:hover {
+  background-color: #ff003c;
+  color: #050505;
+  box-shadow: 0 0 15px rgba(255, 0, 60, 0.6);
 }
 
-.projects-section h2 {
-  font-size: 1.8rem;
-  margin-bottom: 1.5rem;
-  border-bottom: none;
+.cyber-admin-nav-wrapper {
+  margin-bottom: 1rem;
 }
 
-.projects-grid {
+.cyber-admin-panel {
+  background-color: #121214;
+  border: 1px solid #2a2a35;
+  border-left: 3px solid #00f2ff;
+  padding: 2rem;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.cyber-panel-title {
+  color: #00f2ff;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 1.2rem;
+  margin: 0 0 1rem 0;
+  letter-spacing: 1.5px;
+  width: 100%;
+  border-bottom: 1px dashed #2a2a35;
+  padding-bottom: 0.5rem;
+}
+
+.cyber-text-highlight {
+  color: #e2e8f0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.cyber-text-dim {
+  color: #64748b;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.cyber-action-btn {
+  background-color: transparent;
+  border: 1px solid #00f2ff;
+  color: #00f2ff;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 0.9rem;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.cyber-action-btn:hover {
+  background-color: #00f2ff;
+  color: #050505;
+  box-shadow: 0 0 10px rgba(0, 242, 255, 0.4);
+}
+
+.cyber-admin-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: 100%;
+}
+
+.cyber-admin-skill-btn {
+  background-color: #050505;
+  border: 1px solid #2a2a35;
+  color: #e2e8f0;
+  padding: 0.5rem 1rem;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cyber-admin-skill-btn:hover {
+  border-color: #00f2ff;
+  color: #00f2ff;
+  box-shadow: inset 0 0 8px rgba(0, 242, 255, 0.2);
+}
+
+.cyber-admin-projects {
+  border-left-color: #e2e8f0; 
+}
+
+.cyber-admin-projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
+  width: 100%;
 }
 
-@media screen and (max-width: 768px) {
-  .adminpage {
-    padding: 2rem 1rem;
-    gap: 2rem;
-  }
-
-  .adminpage h2 {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.75rem;
-    font-size: 1.5rem;
-  }
-
-  .presentation-section {
-    padding: 1.5rem;
-  }
+.cyber-error {
+  color: #ff003c;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  margin: 0;
 }

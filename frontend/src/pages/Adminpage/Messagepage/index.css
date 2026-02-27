@@ -1,26 +1,69 @@
-.message-page {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 24px;
-    background-color: #f9fafb;
-    min-height: 100vh;
+.cyber-messages-page {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  padding: 2rem 0;
 }
 
-.message-page h2 {
-    font-size: 1.6rem;
-    font-weight: 700;
-    margin-bottom: 20px;
-    color: #111827;
+.cyber-messages-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+  border-bottom: 2px solid #2a2a35;
+  padding-bottom: 1.5rem;
 }
 
-.messages-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 16px;
-    margin-bottom: 24px;
+.cyber-back-btn {
+  background-color: transparent;
+  border: 1px solid #64748b;
+  color: #64748b;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
 }
 
-.message-page p {
-    font-size: 0.95rem;
-    color: #6b7280;
+.cyber-back-btn:hover {
+  border-color: #00f2ff;
+  color: #00f2ff;
+  box-shadow: inset 0 0 8px rgba(0, 242, 255, 0.2);
+}
+
+.cyber-page-title {
+  color: #e2e8f0;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 2rem;
+  margin: 0;
+  letter-spacing: 2px;
+}
+
+.cyber-page-title .sys-prompt {
+  color: #00f2ff;
+}
+
+.cyber-messages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.cyber-empty-state {
+  background-color: #121214;
+  border: 1px dashed #2a2a35;
+  color: #64748b;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 1.1rem;
+  padding: 2rem;
+  text-align: center;
+  width: 100%;
+}
+
+.cyber-empty-state .sys-prompt {
+  color: #00f2ff;
+  margin-right: 10px;
 }

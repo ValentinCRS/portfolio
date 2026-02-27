@@ -1,117 +1,60 @@
-.create-presentation {
+.cyber-create-skill-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 2rem 0;
+}
+
+.cyber-create-skill-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.cyber-page-title {
+  color: #e2e8f0;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  letter-spacing: 2px;
+  text-align: left;
   width: 100%;
   max-width: 600px;
-  margin: 0 auto;
-  background-color: rgba(255, 255, 255, 0.05);
-  padding: 2.5rem;
-  border-radius: 8px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cyber-page-title .sys-prompt {
+  color: #00f2ff;
+}
+
+.cyber-form-actions {
   display: flex;
   flex-direction: column;
-  gap: 1.75rem;
-  border-top: 4px solid var(--psg-red);
-  backdrop-filter: blur(5px);
-}
-
-.create-presentation h1 {
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--psg-white);
-  text-align: center;
-  text-transform: uppercase;
-}
-
-.create-presentation form {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.create-presentation .form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.create-presentation label {
-  color: var(--psg-white);
-  font-weight: 600;
-  font-size: 0.9rem;
-}
-
-.create-presentation input,
-.create-presentation textarea {
+  gap: 1rem;
+  margin-top: 1.5rem;
   width: 100%;
-  padding: 1rem;
-  background-color: rgba(0, 0, 0, 0.2);
-  color: var(--psg-white);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 4px;
-  font-size: 1rem;
-  outline: none;
-  font-family: inherit;
-  transition: all 0.3s ease;
 }
 
-.create-presentation textarea {
-  min-height: 150px;
-  resize: vertical;
-}
-
-.create-presentation input:focus,
-.create-presentation textarea:focus {
-  border-color: var(--psg-red);
-  background-color: rgba(0, 0, 0, 0.3);
-}
-
-.create-presentation button[type="submit"] {
-  padding: 0.75rem 1.5rem;
-  background-color: var(--psg-blue);
-  color: var(--psg-white);
-  border: 1px solid var(--psg-blue);
-  border-radius: 4px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  margin-top: 0.5rem;
-}
-
-.create-presentation button[type="submit"]:hover {
-  background-color: var(--psg-dark);
-  border-color: var(--psg-white);
-}
-
-.create-presentation .cancel-button {
-  margin-top: 1rem;
-  padding: 0.75rem 1.25rem;
+.cyber-cancel-btn {
   background-color: transparent;
-  color: rgba(255, 255, 255, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 4px;
+  border: 1px solid #ff003c;
+  color: #ff003c;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 1rem;
   cursor: pointer;
-  font-weight: 600;
-  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
   transition: all 0.3s ease;
-  display: block;
-  text-decoration: none;
+  width: 100%;
 }
 
-.create-presentation .cancel-button:hover {
-  background-color: var(--psg-red);
-  border-color: var(--psg-red);
-  color: var(--psg-white);
-}
-
-@media screen and (max-width: 768px) {
-  .create-presentation {
-    padding: 1.5rem;
-    width: 100%;
-    border-radius: 0;
-    border-top: none;
-    border-left: 4px solid var(--psg-red);
-  }
-
-  .create-presentation h1 {
-    font-size: 1.5rem;
-  }
+.cyber-cancel-btn:hover {
+  background-color: #ff003c;
+  color: #050505;
+  box-shadow: 0 0 15px rgba(255, 0, 60, 0.6);
 }

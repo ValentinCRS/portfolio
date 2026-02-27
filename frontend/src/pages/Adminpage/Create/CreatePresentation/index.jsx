@@ -5,6 +5,8 @@ import FormGroup from '../../../../components/molecules/FormGroup';
 import FormLabel from '../../../../components/atoms/FormLabel';
 import Input from '../../../../components/atoms/FormInput';
 import FormSubmit from '../../../../components/atoms/FormSubmit';
+import Nav from '../../../../components/AdminNav';
+import './index.css'
 
 const CreatePresentation = () => {
     const navigate = useNavigate();
@@ -26,9 +28,9 @@ const CreatePresentation = () => {
 
     const handleSubmit = async (e) => {
     e.preventDefault();
-    const token = localStorage.getItem('token'); // 👈 Récupération du token
+    const token = localStorage.getItem('token');
 
-    // 👇 AJOUTE CETTE LIGNE POUR VÉRIFIER
+    
     console.log("Token envoyé :", token); 
 
     if (!token) {
@@ -57,106 +59,90 @@ const CreatePresentation = () => {
     };
 
     return (
-        <div className="create-presentation p-4">
-            <h1 className="text-2xl font-bold mb-4">Créer mon Profil</h1>
-            
-            <Form onSubmit={handleSubmit}>
-                <FormGroup>
-                    <FormLabel htmlFor="name">Nom</FormLabel>
-                    <Input 
-                        type="text" 
-                        id="name" 
-                        name="name" 
-                        value={formData.name} 
-                        onChange={handleChange} 
-                        placeholder="" 
-                        required={true}
-                    />
-                </FormGroup>
+        <div className="cyber-profile-wrapper">
+            <div className="cyber-profile-container">
+                <Nav/>
+                <h1 className="cyber-page-title">
+                    <span className="sys-prompt">root@presentation:</span> PROFILE
+                </h1>
+                
+                <Form onSubmit={handleSubmit}>
+                    <FormGroup>
+                        <FormLabel>Nom</FormLabel>
+                        <Input
+                            type="text" 
+                            id="name" 
+                            name="name" 
+                            value={formData.name} 
+                            onChange={handleChange} 
+                            required={true}
+                        />
+                    </FormGroup>
 
-                <FormGroup>
-                    <FormLabel htmlFor="description">Description</FormLabel>
-                    <Input 
-                        type="text" 
-                        id="description" 
-                        name="description" 
-                        value={formData.description} 
-                        onChange={handleChange} 
-                        placeholder="Brève description de moi-même" 
-                    />
-                </FormGroup>
+                    <FormGroup>
+                        <FormLabel>Description</FormLabel>
+                        <Input 
+                            label="Directive_Principale (Description)"
+                            type="text" 
+                            id="description" 
+                            name="description" 
+                            value={formData.description} 
+                            onChange={handleChange} 
+                            placeholder="Brève description..." 
+                        />
+                    </FormGroup>
 
-                <FormGroup>
-                    <FormLabel htmlFor="email">Email</FormLabel>
-                    <Input 
-                        type="email" 
-                        id="email" 
-                        name="email" 
-                        value={formData.email} 
-                        onChange={handleChange} 
-                        placeholder="" 
-                    />
-                </FormGroup>
+                    <FormGroup>
+                        <FormLabel>Email</FormLabel>
+                        <Input
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            value={formData.email} 
+                            onChange={handleChange} 
+                        />
+                    </FormGroup>
 
-                <FormGroup>
-                    <FormLabel htmlFor="telephone">Téléphone</FormLabel>
-                    <Input 
-                        type="tel" 
-                        id="telephone" 
-                        name="telephone" 
-                        value={formData.telephone} 
-                        onChange={handleChange} 
-                        placeholder=""
-                    />
-                </FormGroup>
+                    <FormGroup>
+                        <FormLabel>Téléphone</FormLabel>
+                        <Input
+                            type="tel" 
+                            id="telephone" 
+                            name="telephone" 
+                            value={formData.telephone} 
+                            onChange={handleChange} 
+                        />
+                    </FormGroup>
 
-                <FormGroup>
-                    <FormLabel htmlFor="linkedin">LinkedIn</FormLabel>
-                    <Input 
-                        type="url" 
-                        id="linkedin" 
-                        name="linkedin" 
-                        value={formData.linkedin} 
-                        onChange={handleChange} 
-                        placeholder="" 
-                    />
-                </FormGroup>
+                    <FormGroup>
+                        <FormLabel>LinkedIn</FormLabel>
+                        <Input
+                            type="url" 
+                            id="linkedin" 
+                            name="linkedin" 
+                            value={formData.linkedin} 
+                            onChange={handleChange} 
+                        />
+                    </FormGroup>
 
-                <FormGroup>
-                    <FormLabel htmlFor="github">GitHub</FormLabel>
-                    <Input 
-                        type="url" 
-                        id="github" 
-                        name="github" 
-                        value={formData.github} 
-                        onChange={handleChange} 
-                        placeholder="" 
-                    />
-                </FormGroup>
-
-                <FormGroup>
-                    <FormLabel htmlFor="cv_url">CV (PDF)</FormLabel>
-                    <Input 
-                        type="url" 
-                        id="cv_url" 
-                        name="cv_url" 
-                        value={formData.cv_url} 
-                        onChange={handleChange} 
-                        placeholder="" 
-                    />
-                </FormGroup>
-
-                <div className="mt-4">
-                    <FormSubmit content="Enregistrer le profil" />
-                </div>
-            </Form>
-
-            <button 
-                className="mt-4 text-gray-500 hover:text-black"
-                onClick={() => navigate("/admin")}
-            >
-                Annuler et Retour
-            </button>
+                    <FormGroup>
+                        <FormLabel>GitHub</FormLabel>
+                        <Input
+                            type="url" 
+                            id="github" 
+                            name="github" 
+                            value={formData.github} 
+                            onChange={handleChange} 
+                        />
+                    </FormGroup>
+                    <div className="cyber-form-actions">
+                        <FormSubmit content="SAUVEGARDER_LE_PROFIL" />
+                        <button type="button" className="cyber-cancel-btn" onClick={() => navigate("/admin")} >
+                            [X] RETOUR
+                        </button>
+                    </div>
+                </Form>
+            </div>
         </div>
     );
 }
