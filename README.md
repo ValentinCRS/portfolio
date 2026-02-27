@@ -51,7 +51,7 @@ Ce projet est un **portfolio fullstack complet** développé en JavaScript moder
 
 ---
 
-## 🛠️ Stack technique
+## Stack technique
 
 ### Frontend
 | Technologie | Usage |
@@ -281,4 +281,5 @@ http://localhost:5000/api
 #### Presentation
 - `GET /presentation` - Récupérer les infos du profil
 - `PUT /presentation` - Mettre à jour le profil *(authentifié)*
+
 
