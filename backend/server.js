@@ -27,6 +27,7 @@ const messageRoutes = require('./routes/messageRoute');
 const authRoutes = require('./routes/authRoute');
 const skillsRoutes = require('./routes/skillsRoute');
 const presentationRoutes = require('./routes/presentationRoute');
+const EXPRoutes = require('./routes/EXPRoute');
 
 // Register API routes
 app.use('/api/projects', projectRoutes);
@@ -34,6 +35,7 @@ app.use('/api/messages', messageRoutes);
 app.use('/api/skills', skillsRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/presentation', presentationRoutes);
+app.use('/api/experiences', EXPRoutes);
 
 // Server port
 const PORT = 5000;

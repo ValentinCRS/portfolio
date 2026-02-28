@@ -2,12 +2,14 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Nav from "../../components/AdminNav";
 import ProjectCard from "../../components/ProjectCardAdmin";
+import ExpCardAdmin from "../../components/ExpCardAdmin";
 import "./index.css";
 
 const Adminpage = () => {
     const navigate = useNavigate();
     const [projects, setProjects] = useState([]);
     const [skills, setSkills] = useState([]);
+    const [experience, setExperience] = useState([]);
     const [presentation, setPresentation] = useState(null);
 
     useEffect(() => {
@@ -27,6 +29,10 @@ const Adminpage = () => {
             .then(res => res.json())
             .then(data => setPresentation(data))
             .catch(err => console.error(err));
+        fetch('http://localhost:5000/api/experiences')
+            .then(res => res.json())
+            .then(data => setExperience(data))
+            .catch(err => console.error(err));
 
     }, [navigate]);
 
@@ -35,7 +41,7 @@ const Adminpage = () => {
         navigate('/login');
     }
 
-    const handleDelete = async (id) => {
+    const handleDeleteProjet = async (id) => {
         const token = localStorage.getItem('token');
 
         try {
@@ -49,6 +55,28 @@ const Adminpage = () => {
 
             if (response.ok) {
                 setProjects(currentProjects => currentProjects.filter(proj => proj._id !== id));
+            } else {
+                alert("Erreur lors de la suppression");
+            }
+        } catch (error) {
+            console.error("Erreur delete:", error);
+        }
+    };
+
+    const handleDeleteExperience = async (id) => {
+        const token = localStorage.getItem('token');
+
+        try {
+            const response = await fetch(`http://localhost:5000/api/experiences/${id}`, {
+                method: 'DELETE',
+                headers: {
+                    'Authorization': `Bearer ${token}`, 
+                    'Content-Type': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                setExperience(currentExperience => currentExperience.filter(exp => exp._id !== id));
             } else {
                 alert("Erreur lors de la suppression");
             }
@@ -107,6 +135,23 @@ const Adminpage = () => {
             </div>
 
             <div className="cyber-admin-panel cyber-admin-projects">
+                <h2 className="cyber-panel-title">BASE_DE_DONNEES.EXPERIENCES</h2>
+                <div className="cyber-admin-projects-grid">
+                    {experience.length > 0 ? (
+                        experience.map((exp) => (
+                            <ExpCardAdmin 
+                                key={exp._id} 
+                                experience={exp} 
+                                onDelete={() => handleDeleteExperience(exp._id)}
+                            />
+                        ))
+                    ) : (
+                        <p className="cyber-error">AUCUNE_EXPERIENCE_TROUVEE</p>
+                    )}
+                </div>
+            </div>
+
+            <div className="cyber-admin-panel cyber-admin-projects">
                 <h2 className="cyber-panel-title">BASE_DE_DONNEES.PROJETS</h2>
                 <div className="cyber-admin-projects-grid">
                     {projects.length > 0 ? (
@@ -114,7 +159,7 @@ const Adminpage = () => {
                             <ProjectCard 
                                 key={proj._id} 
                                 project={proj} 
-                                onDelete={() => handleDelete(proj._id)}
+                                onDelete={() => handleDeleteProjet(proj._id)}
                             />
                         ))
                     ) : (

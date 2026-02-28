@@ -1,0 +1,123 @@
+.cyber-admin-exp-card {
+  background-color: #050505;
+  border: 1px solid #2a2a35;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.cyber-admin-exp-card:hover {
+  border-color: #64748b;
+  box-shadow: 0 0 10px rgba(100, 116, 139, 0.1);
+}
+
+.cyber-admin-exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.cyber-admin-exp-title {
+  color: #e2e8f0;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 1.2rem;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.cyber-admin-exp-title .sys-prompt {
+  color: #00f2ff;
+  font-size: 1rem;
+  margin-right: 0.5rem;
+}
+
+.cyber-admin-exp-dates {
+  color: #64748b;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 0.85rem;
+  background-color: #121214;
+  padding: 0.3rem 0.6rem;
+  border: 1px solid #2a2a35;
+}
+
+.cyber-admin-exp-company {
+  color: #e2e8f0;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 1rem;
+  margin: 0.5rem 0 1rem 0;
+  letter-spacing: 1px;
+}
+
+.cyber-admin-exp-divider {
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(90deg, #2a2a35 0%, transparent 100%);
+  margin-bottom: 1rem;
+}
+
+.cyber-admin-exp-desc {
+  color: #94a3b8;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0 0 1.5rem 0;
+  flex-grow: 1; /* Pousse les boutons vers le bas si la description est courte */
+}
+
+/* --- BOUTONS D'ACTION --- */
+.cyber-admin-exp-actions {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  margin-top: auto;
+  border-top: 1px dashed #2a2a35;
+  padding-top: 1.2rem;
+}
+
+.cyber-btn-edit {
+  flex: 1;
+  background-color: transparent;
+  border: 1px solid #00f2ff;
+  color: #00f2ff;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 0.9rem;
+  font-weight: bold;
+  padding: 0.8rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.cyber-btn-edit:hover {
+  background-color: #00f2ff;
+  color: #050505;
+  box-shadow: 0 0 10px rgba(0, 242, 255, 0.4);
+}
+
+.cyber-btn-delete {
+  flex: 1;
+  background-color: transparent;
+  border: 1px solid #ff003c;
+  color: #ff003c;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 0.9rem;
+  font-weight: bold;
+  padding: 0.8rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.cyber-btn-delete:hover {
+  background-color: #ff003c;
+  color: #050505;
+  box-shadow: 0 0 10px rgba(255, 0, 60, 0.4);
+}

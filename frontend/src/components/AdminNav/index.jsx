@@ -39,6 +39,14 @@ const Nav = () => {
                 </li>
                 <li>
                     <NavLink 
+                        to="/admin/create-experience"
+                        className={({ isActive }) => isActive ? "cyber-admin-nav-link active" : "cyber-admin-nav-link"}
+                    >
+                        <span className="sys-prompt">+</span> CREER_EXPERIENCE
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink 
                         to="/admin/messages"
                         className={({ isActive }) => isActive ? "cyber-admin-nav-link active" : "cyber-admin-nav-link"}
                     >

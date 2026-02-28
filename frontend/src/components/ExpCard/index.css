@@ -1,0 +1,73 @@
+.cyber-exp-card {
+  background-color: #050505;
+  border: 1px solid #2a2a35;
+  border-left: 4px solid #00f2ff;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.cyber-exp-card:hover {
+  border-color: #2a2a35 #2a2a35 #2a2a35 #00f2ff;
+  background-color: #0a0a0c;
+  box-shadow: -5px 0 15px rgba(0, 242, 255, 0.1);
+  transform: translateX(8px);
+}
+
+.cyber-exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.cyber-exp-title {
+  color: #e2e8f0;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 1.25rem;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.cyber-exp-title .sys-prompt {
+  color: #00f2ff;
+  margin-right: 0.5rem;
+  font-size: 1rem;
+}
+
+.cyber-exp-company {
+  color: #ff003c;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 1rem;
+  margin: 0 0 1rem 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.cyber-exp-dates {
+  color: #64748b;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 0.85rem;
+  background-color: #121214;
+  padding: 0.3rem 0.6rem;
+  border: 1px solid #2a2a35;
+}
+
+.cyber-exp-divider {
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(90deg, #2a2a35 0%, transparent 100%);
+  margin-bottom: 1rem;
+}
+
+.cyber-exp-desc {
+  color: #94a3b8;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}

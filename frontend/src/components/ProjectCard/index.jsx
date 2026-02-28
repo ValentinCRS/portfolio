@@ -7,7 +7,7 @@ const ProjectCard = ({ project}) => {
                 <span className="sys-prompt">&gt;</span> {project.title}
             </h3>
             
-            <div className="cyber-public-image-container">
+            {/* <div className="cyber-public-image-container">
                 {project.image_url ? (
                     <>
                         <img 
@@ -22,7 +22,7 @@ const ProjectCard = ({ project}) => {
                         [ IMAGE_NON_TROUVÉE ]
                     </div>
                 )}
-            </div>
+            </div> */}
             
             <p className="cyber-public-desc">{project.description}</p>
             

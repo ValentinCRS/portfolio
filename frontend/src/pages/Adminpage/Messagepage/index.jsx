@@ -75,7 +75,7 @@ const Messagepage = () => {
                     ))
                 ) : (
                     <div className="cyber-empty-state">
-                        <span className="sys-prompt">&gt;</span> SYSTEME : AUCUN_MESSAGE_INTERCEPTE.
+                        <span className="sys-prompt">&gt;</span> SYSTEME : AUCUN_MESSAGE.
                     </div>
                 )}
             </div>

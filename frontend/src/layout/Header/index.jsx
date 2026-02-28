@@ -22,6 +22,14 @@ const Header = () => {
                     </li>
                     <li>
                         <NavLink 
+                            to="/experience" 
+                            className={({ isActive }) => isActive ? "cyber-link active-link" : "cyber-link"}
+                        >
+                            <span className="nav-bracket">[</span> EXPERIENCE <span className="nav-bracket">]</span>
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink 
                             to="/contact" 
                             className={({ isActive }) => isActive ? "cyber-link active-link" : "cyber-link"}
                         >

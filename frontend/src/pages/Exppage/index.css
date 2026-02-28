@@ -1,0 +1,54 @@
+.cyber-explist-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 800px; /* Largeur max pour que ce soit lisible */
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.cyber-section-title {
+  color: #e2e8f0;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-bottom: 1px dashed #2a2a35;
+  padding-bottom: 1rem;
+}
+
+.cyber-section-title .sys-prompt {
+  color: #00f2ff;
+  margin-right: 0.5rem;
+  animation: blink 1s step-end infinite;
+}
+
+.cyber-explist-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border-left: 1px dashed #2a2a35; 
+  padding-left: 2rem;
+  margin-left: 1rem;
+}
+
+.cyber-status-text {
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  margin-top: 1rem;
+}
+
+.cyber-status-text.pulsing {
+  color: #00f2ff;
+  animation: pulse 1.5s infinite;
+}
+
+.cyber-status-text.error {
+  color: #ff003c;
+  background-color: rgba(255, 0, 60, 0.05);
+  border: 1px solid #ff003c;
+  padding: 1rem;
+  display: inline-block;
+}
