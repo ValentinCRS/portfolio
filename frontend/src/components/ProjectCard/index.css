@@ -33,7 +33,7 @@
 .cyber-public-image-container {
   position: relative;
   width: 100%;
-  height: 220px; /* Hauteur fixe pour que toutes tes cartes soient alignées */
+  height: 220px;
   overflow: hidden;
   border: 1px solid #2a2a35;
   margin-bottom: 1.5rem;
@@ -44,12 +44,11 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* Image grisée au repos avec une petite teinte bleutée */
   filter: grayscale(80%) sepia(20%) hue-rotate(180deg);
   transition: all 0.5s ease;
 }
 
-/* On restaure les couleurs au survol */
+
 .cyber-public-card:hover .cyber-public-image {
   filter: grayscale(0%) sepia(0%) hue-rotate(0deg);
 }
@@ -75,7 +74,6 @@
   font-size: 0.9rem;
   text-transform: uppercase;
   letter-spacing: 2px;
-  /* Motif cyberpunk de fond (bandes obliques) */
   background-image: repeating-linear-gradient(
     45deg,
     #050505 25%,

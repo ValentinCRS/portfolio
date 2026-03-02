@@ -67,10 +67,10 @@
   font-size: 0.95rem;
   line-height: 1.6;
   margin: 0 0 1.5rem 0;
-  flex-grow: 1; /* Pousse les boutons vers le bas si la description est courte */
+  flex-grow: 1;
 }
 
-/* --- BOUTONS D'ACTION --- */
+
 .cyber-admin-exp-actions {
   display: flex;
   gap: 1rem;
