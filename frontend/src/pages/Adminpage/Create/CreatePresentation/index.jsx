@@ -10,7 +10,7 @@ import './index.css'
 
 const CreatePresentation = () => {
     const navigate = useNavigate();
-    
+    const API_BASE_URL = "https://portfolio-pi-azure-49.vercel.app";
     const [formData, setFormData] = useState({
         name: '',
         description: '',
@@ -39,7 +39,7 @@ const CreatePresentation = () => {
     }
 
     try {
-        const response = await fetch('http://localhost:5000/api/presentation', {
+        const response = await fetch(`${API_BASE_URL}/api/presentation`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

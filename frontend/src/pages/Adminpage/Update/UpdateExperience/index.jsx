@@ -21,8 +21,12 @@ const UpdateExperience = () => {
         end_date: '',
     });
 
+
+    const API_BASE_URL = "https://portfolio-pi-azure-49.vercel.app";
+
     useEffect(() => {
-        fetch(`http://localhost:5000/api/experiences/${id}`)
+        
+        fetch(`${API_BASE_URL}/api/experiences/${id}`)
             .then(res => {
                 if (!res.ok) throw new Error("Erreur chargement expérience");
                 return res.json();
@@ -55,7 +59,7 @@ const UpdateExperience = () => {
         }
 
         try {
-            const response = await fetch(`http://localhost:5000/api/experiences/${id}`, {
+            const response = await fetch(`${API_BASE_URL}/api/experiences/${id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',

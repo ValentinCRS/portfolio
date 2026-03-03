@@ -34,7 +34,8 @@ const CreateProject = () => {
     }
 
     try {
-        const response = await fetch('http://localhost:5000/api/experiences', {
+        const API_BASE_URL = "https://portfolio-pi-azure-49.vercel.app";
+        const response = await fetch(`${API_BASE_URL}/api/experiences`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

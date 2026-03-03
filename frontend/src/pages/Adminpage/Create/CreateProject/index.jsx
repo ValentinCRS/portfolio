@@ -10,7 +10,7 @@ import './index.css';
 
 const CreateProject = () => {
     const navigate = useNavigate();
-    
+    const API_BASE_URL = "https://portfolio-pi-azure-49.vercel.app";
     const [formData, setFormData] = useState({
         title : '',
         description : '',
@@ -22,7 +22,7 @@ const CreateProject = () => {
     const [availableSkills, setAvailableSkills] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/api/skills')
+        fetch(`${API_BASE_URL}/api/skills`)
             .then(res => res.json())
             .then(data => setAvailableSkills(data))
             .catch(err => console.error("Erreur chargement skills", err));
@@ -56,7 +56,7 @@ const CreateProject = () => {
     }
 
     try {
-        const response = await fetch('http://localhost:5000/api/projects', {
+        const response = await fetch(`${API_BASE_URL}/api/projects`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

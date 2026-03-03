@@ -86,7 +86,8 @@ const UpdateProject = () => {
         }
 
         try {
-            const response = await fetch(`http://localhost:5000/api/projects/${id}`, {
+            const API_BASE_URL = "https://portfolio-pi-azure-49.vercel.app";
+            const response = await fetch(`${API_BASE_URL}/api/projects/${id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',

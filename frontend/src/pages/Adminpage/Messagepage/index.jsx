@@ -7,6 +7,7 @@ import './index.css';
 const Messagepage = () => {
     const navigate = useNavigate();
     const [messages, setMessages] = useState([]);
+    const API_BASE_URL = "https://portfolio-pi-azure-49.vercel.app";
 
     useEffect(() => {
         const token = localStorage.getItem('token');
@@ -14,7 +15,7 @@ const Messagepage = () => {
             navigate('/login');
             return;
         }
-        fetch('http://localhost:5000/api/messages', {
+        fetch(`${API_BASE_URL}/api/messages`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -37,7 +38,7 @@ const Messagepage = () => {
         const token = localStorage.getItem('token');
 
         try {
-            const response = await fetch(`http://localhost:5000/api/messages/${id}`, {
+            const response = await fetch(`${API_BASE_URL}/api/messages/${id}`, {
                 method: 'DELETE',
                 headers: {
                     'Authorization': `Bearer ${token}`, 

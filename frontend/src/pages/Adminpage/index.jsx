@@ -13,23 +13,25 @@ const Adminpage = () => {
     const [presentation, setPresentation] = useState(null);
 
     useEffect(() => {
+
+        const API_BASE_URL = "https://portfolio-pi-azure-49.vercel.app";
         const token = localStorage.getItem('token');
         if (!token) {
             navigate('/login');
         }
-        fetch('http://localhost:5000/api/projects')
+        fetch(`${API_BASE_URL}/api/projects`)
             .then(res => res.json())
             .then(data => setProjects(data))
             .catch(err => console.error(err));
-        fetch('http://localhost:5000/api/skills')
+        fetch(`${API_BASE_URL}/api/skills`)
             .then(res => res.json())
             .then(data => setSkills(data))
             .catch(err => console.error(err));
-        fetch('http://localhost:5000/api/presentation')
+        fetch(`${API_BASE_URL}/api/presentation`)
             .then(res => res.json())
             .then(data => setPresentation(data))
             .catch(err => console.error(err));
-        fetch('http://localhost:5000/api/experiences')
+        fetch(`${API_BASE_URL}/api/experiences`)
             .then(res => res.json())
             .then(data => setExperience(data))
             .catch(err => console.error(err));

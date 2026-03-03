@@ -8,7 +8,10 @@ const Exppage = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch('http://localhost:5000/api/experiences') 
+
+        const API_BASE_URL = "https://portfolio-pi-azure-49.vercel.app";
+
+        fetch(`${API_BASE_URL}/api/experiences`) 
             .then(response => {
                 if (!response.ok) throw new Error("Erreur réseau");
                 return response.json();

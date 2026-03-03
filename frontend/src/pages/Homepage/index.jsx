@@ -9,7 +9,10 @@ const Homepage = () => {
     const [skills, setSkills] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/api/projects') 
+
+        const API_BASE_URL = "https://portfolio-pi-azure-49.vercel.app";
+
+        fetch(`${API_BASE_URL}/api/projects`) 
             .then(response => {
                 if (!response.ok) throw new Error("Erreur réseau");
                 return response.json();
@@ -22,11 +25,11 @@ const Homepage = () => {
                 console.error('Erreur :', error);
                 setLoading(false);
             });
-        fetch('http://localhost:5000/api/skills')
+        fetch(`${API_BASE_URL}/api/skills`)
             .then(res => res.json())
             .then(data => {setSkills(data); setLoading(false);})
             .catch(err => console.error(err));
-        fetch('http://localhost:5000/api/presentation')
+        fetch(`${API_BASE_URL}/api/presentation`)
             .then(res => res.json())
             .then(data => {setPresentation(data); setLoading(false);})
             .catch(err => console.error(err));

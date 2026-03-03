@@ -18,7 +18,8 @@ const UpdateSkills = () => {
     });
 
     useEffect(() => {
-        fetch(`http://localhost:5000/api/skills/${id}`)
+        const API_BASE_URL = "https://portfolio-pi-azure-49.vercel.app";
+        fetch(`${API_BASE_URL}/api/skills/${id}`)
             .then(res => {
                 if (!res.ok) throw new Error("Erreur chargement skill");
                 return res.json();
