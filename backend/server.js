@@ -8,7 +8,11 @@ const mongoose = require('mongoose');
 const app = express();
 
 // Enable CORS to allow requests from other origins
-app.use(cors());
+app.use(cors({
+  origin: "https://portfolio-pi-azure-49.vercel.app/",
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
 
 // Enable JSON body parsing for incoming requests
 app.use(express.json());
