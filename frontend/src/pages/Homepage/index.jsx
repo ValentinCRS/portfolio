@@ -10,7 +10,7 @@ const Homepage = () => {
 
     useEffect(() => {
 
-        const API_BASE_URL = "https://portfolio-pi-azure-49.vercel.app";
+        const API_BASE_URL = "https://portfolio-srkb.onrender.com";
 
         fetch(`${API_BASE_URL}/api/projects`) 
             .then(response => {

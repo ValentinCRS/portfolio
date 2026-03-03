@@ -54,7 +54,7 @@ const UpdatePresentation = () => {
         }
 
         try {
-            const API_BASE_URL = "https://portfolio-pi-azure-49.vercel.app";
+            const API_BASE_URL = "https://portfolio-srkb.onrender.com";
             const response = await fetch(`${API_BASE_URL}/api/presentation`, {
                 method: 'PUT',
                 headers: {

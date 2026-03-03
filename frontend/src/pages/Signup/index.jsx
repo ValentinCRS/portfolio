@@ -16,7 +16,7 @@ const Signup = () => {
 
         try {
             // Changement de l'URL vers /signup
-            const API_BASE_URL = "https://portfolio-pi-azure-49.vercel.app";
+            const API_BASE_URL = "https://portfolio-srkb.onrender.com";
             const response = await fetch(`${API_BASE_URL}/api/auth/signup`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
