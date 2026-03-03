@@ -23,7 +23,7 @@ mongoose.connect(dbURI)
 
 // Import application routes
 const projectRoutes = require('./routes/projectRoute');
-const messageRoutes = require('./routes/messageRoute');
+const messageRoutes = require('./routes/messageroute');
 const authRoutes = require('./routes/authRoute');
 const skillsRoutes = require('./routes/skillsRoute');
 const presentationRoutes = require('./routes/presentationRoute');
@@ -38,9 +38,9 @@ app.use('/api/presentation', presentationRoutes);
 app.use('/api/experiences', EXPRoutes);
 
 // Server port
-const PORT = 5000;
+const PORT = process.env.PORT || 10000;
 
 // Start the server
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0',() => {
     console.log(`Server started at http://localhost:${PORT}`);
 });
