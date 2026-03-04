@@ -47,7 +47,7 @@ const Adminpage = () => {
         const token = localStorage.getItem('token');
 
         try {
-            const response = await fetch(`http://localhost:5000/api/projects/${id}`, {
+            const response = await fetch(`${API_BASE_URL}/api/projects/${id}`, {
                 method: 'DELETE',
                 headers: {
                     'Authorization': `Bearer ${token}`, 
@@ -69,7 +69,7 @@ const Adminpage = () => {
         const token = localStorage.getItem('token');
 
         try {
-            const response = await fetch(`http://localhost:5000/api/experiences/${id}`, {
+            const response = await fetch(`${API_BASE_URL}/api/experiences/${id}`, {
                 method: 'DELETE',
                 headers: {
                     'Authorization': `Bearer ${token}`, 

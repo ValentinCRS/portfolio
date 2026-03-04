@@ -48,7 +48,7 @@ const UpdateSkills = () => {
         }
 
         try {
-            const response = await fetch(`http://localhost:5000/api/skills/${id}`, {
+            const response = await fetch(`${API_BASE_URL}/api/skills/${id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -77,7 +77,7 @@ const UpdateSkills = () => {
         }
 
         try {
-            const response = await fetch(`http://localhost:5000/api/skills/${id}`, {
+            const response = await fetch(`${API_BASE_URL}/api/skills/${id}`, {
                 method: 'DELETE',
                 headers: {
                     'Authorization': `Bearer ${token}`

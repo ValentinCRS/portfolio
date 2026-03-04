@@ -66,8 +66,9 @@ exports.UpdatePresentation = async (req, res) => {
 // Delete Presentation
 exports.DeletePresentation = async (req, res) => {
     try {
-        const deletedPresentation = await Presentation.findOneAndDelete();
-        if (deletedPresentation) {
+        const presentation = await Presentation.findOne();
+        if (presentation) {
+            await presentation.remove();
             res.json({ message: 'Presentation deleted' });
         } else {
             res.status(404).json({ message: 'Presentation not found' });
