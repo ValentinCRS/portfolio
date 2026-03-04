@@ -9,7 +9,7 @@ const app = express();
 
 // Enable CORS to allow requests from other origins
 app.use(cors({
-  origin: "https://portfolio-aig5aiiza-valentincrs-projects.vercel.app",
+  origin: "https://portfolio-pi-azure-49.vercel.app",
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
