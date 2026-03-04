@@ -8,8 +8,19 @@ const mongoose = require('mongoose');
 const app = express();
 
 // Enable CORS to allow requests from other origins
+const allowedOrigins = [
+  "https://portfolio-pi-azure-49.vercel.app",
+  "https://portfolio-eviusr0x9-valentincrs-projects.vercel.app"
+];
+
 app.use(cors({
-  origin: "https://portfolio-pi-azure-49.vercel.app",
+  origin: function(origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
