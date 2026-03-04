@@ -5,14 +5,14 @@ const ProjectCard = ({ project, onDelete }) => {
     const navigate = useNavigate();
     return (
         <div className="cyber-project-card">
-            <div className="cyber-project-image-container">
+            {/* <div className="cyber-project-image-container">
                 <img 
                     src={project.image_url || 'https://via.placeholder.com/300'} 
                     alt={project.title} 
                     className="cyber-project-image"
                 />
                 <div className="cyber-image-overlay"></div>
-            </div>
+            </div> */}
             
             <div className="cyber-project-content">
                 <h3 className="cyber-project-title">
