@@ -4,7 +4,8 @@ const Project = require('../models/Project');
 exports.createProject = async (req, res) => {
     try {
         const newProject = new Project(req.body);
-        const savedProject = await newProject.save().populate('skills');
+        const savedProject = await newProject.save();
+        await savedProject.populate('skills');
         res.status(201).json(savedProject);
     } catch (error) {
         res.status(500).json({ error: error.message });

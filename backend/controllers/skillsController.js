@@ -43,7 +43,6 @@ exports.UpdateSkill = async (req, res) => {
         if (!skill) {
             return res.status(404).json({ message: 'Skill not found' });
         }
-        await skill.save();
         res.json(skill);
     } catch (error) {
         res.status(500).json({ message: 'Server Error' });
