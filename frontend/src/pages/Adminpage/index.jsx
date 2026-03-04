@@ -11,10 +11,10 @@ const Adminpage = () => {
     const [skills, setSkills] = useState([]);
     const [experience, setExperience] = useState([]);
     const [presentation, setPresentation] = useState(null);
+    const API_BASE_URL = "https://portfolio-srkb.onrender.com";
 
     useEffect(() => {
 
-        const API_BASE_URL = "https://portfolio-srkb.onrender.com";
         const token = localStorage.getItem('token');
         if (!token) {
             navigate('/login');

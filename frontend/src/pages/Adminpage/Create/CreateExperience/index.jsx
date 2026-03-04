@@ -10,7 +10,7 @@ import './index.css';
 
 const CreateProject = () => {
     const navigate = useNavigate();
-    
+    const API_BASE_URL = "https://portfolio-srkb.onrender.com";
     const [formData, setFormData] = useState({
         title: '',
         description: '',
@@ -34,7 +34,6 @@ const CreateProject = () => {
     }
 
     try {
-        const API_BASE_URL = "https://portfolio-srkb.onrender.com";
         const response = await fetch(`${API_BASE_URL}/api/experiences`, {
             method: 'POST',
             headers: {

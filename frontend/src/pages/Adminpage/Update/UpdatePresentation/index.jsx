@@ -10,6 +10,7 @@ import './index.css'
 
 const UpdatePresentation = () => {
     const navigate = useNavigate();
+    const API_BASE_URL = "https://portfolio-srkb.onrender.com";
     const [formData, setFormData] = useState({
         name: '',
         description: '',
@@ -20,7 +21,7 @@ const UpdatePresentation = () => {
         cv_url: ''
     });
     useEffect(() => {
-        fetch('http://localhost:5000/api/presentation')
+        fetch(`${API_BASE_URL}/api/presentation`)
             .then(res => {
                 if (!res.ok) throw new Error("Erreur chargement de la présentation");
                 return res.json();
@@ -54,7 +55,6 @@ const UpdatePresentation = () => {
         }
 
         try {
-            const API_BASE_URL = "https://portfolio-srkb.onrender.com";
             const response = await fetch(`${API_BASE_URL}/api/presentation`, {
                 method: 'PUT',
                 headers: {

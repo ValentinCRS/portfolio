@@ -11,6 +11,7 @@ import './index.css';
 const UpdateSkills = () => {
     const navigate = useNavigate();
     const { id } = useParams();
+    const API_BASE_URL = "https://portfolio-srkb.onrender.com";
 
     const [formData, setFormData] = useState({
         name: '',
@@ -18,7 +19,7 @@ const UpdateSkills = () => {
     });
 
     useEffect(() => {
-        const API_BASE_URL = "https://portfolio-srkb.onrender.com";
+        
         fetch(`${API_BASE_URL}/api/skills/${id}`)
             .then(res => {
                 if (!res.ok) throw new Error("Erreur chargement skill");

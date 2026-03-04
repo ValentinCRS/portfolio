@@ -13,6 +13,7 @@ const UpdateProject = () => {
     const navigate = useNavigate();
     const [availableSkills, setAvailableSkills] = useState([]);
     const { id } = useParams();
+    const API_BASE_URL = "https://portfolio-srkb.onrender.com";
 
     const [formData, setFormData] = useState({
         title: '',
@@ -23,7 +24,7 @@ const UpdateProject = () => {
     });
 
     useEffect(() => {
-        fetch(`http://localhost:5000/api/projects/${id}`)
+        fetch(`${API_BASE_URL}/api/projects/${id}`)
             .then(res => {
                 if (!res.ok) throw new Error("Erreur chargement projet");
                 return res.json();
@@ -38,7 +39,7 @@ const UpdateProject = () => {
             })
             .catch(err => console.error(err));
 
-            fetch(`http://localhost:5000/api/skills`) 
+            fetch(`${API_BASE_URL}/api/skills`) 
             .then(res => {
                 if (!res.ok) throw new Error("Erreur chargement compétences");
                 return res.json();
